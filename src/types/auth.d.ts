@@ -46,9 +46,9 @@ export declare type UserState = {
 } | null;
 
 export declare type AuthState = {
-  isAuthenticated: boolean;
-  user: UserState;
+  isValid: boolean;
   isLoading: boolean;
+  user: UserState;
   error: Error | null;
 };
 // END AUTHENTICATION

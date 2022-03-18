@@ -8,13 +8,13 @@ function App() {
   const dispatch = useAppDispatch();
   const {
     isLoading: isAuthenticating,
-    isAuthenticated,
+    isValid: isAuthValid,
     user
   } = useAppSelector((state: RootState) => state.auth);
 
   useEffect(() => onAuthChanged(dispatch), [dispatch]);
 
-  return <Routes user={user} isAuthorised={isAuthenticated} />;
+  return <Routes user={user} isAuthorised={!isAuthenticating && isAuthValid} />;
 }
 
 export default App;
