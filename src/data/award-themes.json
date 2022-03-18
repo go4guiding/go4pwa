@@ -1,0 +1,732 @@
+[
+  {
+    "name": "Know Myself",
+    "description": "Getting to know who you are, your role in Girlguiding and the wider world.",
+    "interestBadges": [
+      {
+        "name": "Asparations",
+        "tasks": [
+          "What’s your vision?",
+          "Who are your role models?",
+          "Make it happen"
+        ]
+      },
+      {
+        "name": "Human Rights",
+        "tasks": ["Know your rights", "Find your rights", "Defend your rights"]
+      },
+      {
+        "name": "Guiding History",
+        "tasks": ["Guiding spirit", "Blitz cooking", "Second class Guide"]
+      },
+      {
+        "name": "Personal Brand",
+        "tasks": [
+          "What's a brand?",
+          "Communicate your brand",
+          "Tell the story of your brand"
+        ]
+      }
+    ],
+    "skillsBuilders": [
+      {
+        "name": "Network",
+        "stage": 3,
+        "tasks": [
+          { "name": "Picture partners", "duration": 20 },
+          { "name": "Put your best feelings forward", "duration": 30 },
+          { "name": "Stand by? Stand up!", "duration": 45 },
+          { "name": "Tailor made", "duration": 60 },
+          { "name": "Team effort", "duration": 60 }
+        ]
+      },
+      {
+        "name": "Reflect",
+        "stage": 3,
+        "tasks": [
+          { "name": "DNA-mazing!", "duration": 45 },
+          { "name": "Mythical, magical me", "duration": 45 },
+          { "name": "Question quest", "duration": 30 },
+          { "name": "Voicing our voices", "duration": 30 },
+          { "name": "What do we share", "duration": 30 }
+        ]
+      },
+      {
+        "name": "Network",
+        "stage": 4,
+        "tasks": [
+          { "name": "Bucket list", "duration": 60 },
+          { "name": "Can you relate", "duration": 30 },
+          { "name": "Decide and conquer", "duration": 30 },
+          { "name": "Paper planner", "duration": 45 },
+          { "name": "The ME in team", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Reflect",
+        "stage": 4,
+        "tasks": [
+          { "name": "From bad to worse", "duration": 45 },
+          { "name": "My beliefs rock", "duration": 60 },
+          { "name": "Pick a card", "duration": 45 },
+          { "name": "Star of the show", "duration": 45 },
+          { "name": "Which words where", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Network",
+        "stage": 5,
+        "tasks": [
+          { "name": "Dream big", "duration": 30 },
+          { "name": "First impressions", "duration": 30 },
+          { "name": "Negotiate the bake", "duration": 45 },
+          { "name": "What’s your type?", "duration": 30 },
+          { "name": "You can do this!", "duration": 60 }
+        ]
+      },
+      {
+        "name": "Reflect",
+        "stage": 5,
+        "tasks": [
+          { "name": "2B or not 2B", "duration": 45 },
+          { "name": "Agree to disagree", "duration": 30 },
+          { "name": "Constructive communities", "duration": 45 },
+          { "name": "Mix it up", "duration": 45 },
+          { "name": "Trying out traditions", "duration": 60 }
+        ]
+      }
+    ],
+    "unitMeetingActivities": [
+      { "name": "Aeroplane answers", "duration": 15 },
+      { "name": "Dear future me", "duration": 30 },
+      { "name": "Celebrating heroes", "duration": 45 },
+      { "name": "Galactic Guides", "duration": 45 },
+      { "name": "Poppy pinwheels", "duration": 60 },
+      { "name": "War time Guides", "duration": 30 },
+      { "name": "Treasure Hunters", "duration": 45 },
+      { "name": "Against the Law", "duration": 30 },
+      { "name": "The two match challenge", "duration": 60 },
+      { "name": "Hello my fab friend", "duration": 10 },
+      { "name": "International explorer", "duration": 60 },
+      { "name": "Washing line of pride", "duration": 30 },
+      { "name": "World Centre welcome", "duration": 30 },
+      { "name": "House of guiding", "duration": 20 },
+      { "name": "Directors cut", "duration": 45 },
+      { "name": "Web it up", "duration": 30 },
+      { "name": "Creative curating", "duration": 60 },
+      { "name": "Votes for women", "duration": 20 },
+      { "name": "Chain-ging times", "duration": 30 },
+      { "name": "Particularly peckish penguins", "duration": 30 },
+      { "name": "Uncovering the past", "duration": 30 },
+      { "name": "Lava", "duration": 20 },
+      { "name": "I'm good thanks", "duration": 30 }
+    ]
+  },
+  {
+    "name": "Express Myself",
+    "description": "Explore your creative side and different ways to communicate with others.",
+    "interestBadges": [
+      {
+        "name": "Confectionery",
+        "tasks": [
+          "Your favourite confections",
+          "Celebrate confections",
+          "Local confections"
+        ]
+      },
+      {
+        "name": "Media critic",
+        "tasks": [
+          "Analyse the media",
+          "One topic, two viewpoints",
+          "The best of the test"
+        ]
+      },
+      {
+        "name": "Photography",
+        "tasks": ["Get technical", "Express yourself", "Make a gallery"]
+      },
+      {
+        "name": "Vlogging",
+        "tasks": [
+          "Know how to be safe online",
+          "Create your vlogging set",
+          "Get vlogging"
+        ]
+      }
+    ],
+    "skillsBuilders": [
+      {
+        "name": "Communicate",
+        "stage": 3,
+        "tasks": [
+          { "name": "Beat the butterflies!s", "duration": 60 },
+          { "name": "Charlie, bravo, alphabet", "duration": 45 },
+          { "name": "Exploring emojis", "duration": 30 },
+          { "name": "Sign it spell it ", "duration": 45 },
+          { "name": "Top comms", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Innovate",
+        "stage": 3,
+        "tasks": [
+          { "name": "A work of art", "duration": 45 },
+          { "name": "Bounce, roll, throw", "duration": 45 },
+          { "name": "Build it up", "duration": 60 },
+          { "name": "It's on the cards", "duration": 60 },
+          { "name": "Speedy explorers", "duration": 60 }
+        ]
+      },
+      {
+        "name": "Communicate",
+        "stage": 4,
+        "tasks": [
+          { "name": "Actions speak louder than words", "duration": 45 },
+          { "name": "Bad chatters tea party", "duration": 30 },
+          { "name": "Deaf friendly", "duration": 45 },
+          { "name": "It’s the way you say it", "duration": 45 },
+          { "name": "Signs of the times", "duration": 30 }
+        ]
+      },
+      {
+        "name": "Innovate",
+        "stage": 4,
+        "tasks": [
+          { "name": "A night on the tiles", "duration": 30 },
+          { "name": "Baking: it's a science!", "duration": 60 },
+          { "name": "Binary beads", "duration": 60 },
+          { "name": "It's not brain surgery", "duration": 60 },
+          { "name": "Walk of the town", "duration": 60 }
+        ]
+      },
+      {
+        "name": "Communicate",
+        "stage": 5,
+        "tasks": [
+          { "name": "Erm, like, y'know?", "duration": 45 },
+          { "name": "Plain to see", "duration": 30 },
+          { "name": "Rhubarb and Custard", "duration": 45 },
+          { "name": "What’s the message in your media?", "duration": 60 },
+          { "name": "That's what I said", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Innovate",
+        "stage": 5,
+        "tasks": [
+          { "name": "Bridging the gap", "duration": 60 },
+          { "name": "Crime scene scientists", "duration": 60 },
+          { "name": "High tech help", "duration": 45 },
+          { "name": "Level up", "duration": 60 },
+          { "name": "Retro revival", "duration": 60 }
+        ]
+      }
+    ],
+    "unitMeetingActivities": [
+      { "name": "Clay makers", "duration": 20 },
+      { "name": "Pass the paintbrush", "duration": 60 },
+      { "name": "Story Swap", "duration": 45 },
+      { "name": "Storytelling silhouettes", "duration": 60 },
+      { "name": "Pass it on", "duration": 20 },
+      { "name": "Stor-elay", "duration": 30 },
+      { "name": "Macrame master", "duration": 45 },
+      { "name": "Bowled over", "duration": 60 },
+      { "name": "Build a beast", "duration": 30 },
+      { "name": "Sensational sounds effects", "duration": 30 },
+      { "name": "Wild wax", "duration": 20 },
+      { "name": "Designer drawings", "duration": 30 },
+      { "name": "Create a cast", "duration": 30 },
+      { "name": "Knock knock", "duration": 45 },
+      { "name": "Prop-er dancer", "duration": 45 },
+      { "name": "Prepare to be amazed!", "duration": 60 },
+      { "name": "Props to you", "duration": 45 },
+      { "name": "Tap it out", "duration": 60 },
+      { "name": "Flipping Figures", "duration": 45 },
+      { "name": "Make your mark", "duration": 60 }
+    ]
+  },
+  {
+    "name": "Be Well",
+    "description": "Look after yourself, and others’ bodies and minds.",
+    "interestBadges": [
+      {
+        "name": "Fitness",
+        "tasks": [
+          "Local fitness opportunities",
+          "Healthy mind, healthy body",
+          "Get active"
+        ]
+      },
+      {
+        "name": "Meditation",
+        "tasks": ["Body scan", "Clear your mind", "Create good bedtimes"]
+      },
+      {
+        "name": "Mixology",
+        "tasks": [
+          "Run your own taste test",
+          "Design a mocktail menu",
+          "Hold a mocktail party"
+        ]
+      },
+      {
+        "name": "Natural remedies",
+        "tasks": [
+          "Ingredient investigation",
+          "Mmmmm, smells good",
+          "Create your own brand"
+        ]
+      }
+    ],
+    "skillsBuilders": [
+      {
+        "name": "Feel Good",
+        "stage": 3,
+        "tasks": [
+          { "name": "Build it with food", "duration": 45 },
+          { "name": "Count bubbles not sheep", "duration": 45 },
+          { "name": "Happy thoughts", "duration": 20 },
+          { "name": "More motivated to move", "duration": 60 },
+          { "name": "Strike a pose", "duration": 30 }
+        ]
+      },
+      {
+        "name": "First aid",
+        "stage": 3,
+        "tasks": [
+          { "name": "Are you okay?", "duration": 30 },
+          { "name": "Blazing burns", "duration": 30 },
+          { "name": "Flexible first aid kits", "duration": 60 },
+          { "name": "Hidden signs", "duration": 20 },
+          { "name": "Think fast", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Feel Good",
+        "stage": 4,
+        "tasks": [
+          { "name": "Chop chop", "duration": 60 },
+          { "name": "Leave it out", "duration": 30 },
+          { "name": "One size doesn't fit all", "duration": 45 },
+          { "name": "StressFull", "duration": 30 },
+          { "name": "Warm up, work out", "duration": 45 }
+        ]
+      },
+      {
+        "name": "First aid",
+        "stage": 4,
+        "tasks": [
+          { "name": "I remember", "duration": 45 },
+          { "name": "Solve the scene", "duration": 60 },
+          { "name": "Take a moment", "duration": 30 },
+          { "name": "Temperature terror", "duration": 60 },
+          { "name": "Under pressure", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Feel Good",
+        "stage": 5,
+        "tasks": [
+          { "name": "Fitness Guides", "duration": 60 },
+          { "name": "Give and take ", "duration": 60 },
+          { "name": "Let it go", "duration": 30 },
+          { "name": "Rainbowls", "duration": 45 },
+          { "name": "Type writer", "duration": 45 }
+        ]
+      },
+      {
+        "name": "First aid",
+        "stage": 5,
+        "tasks": [
+          { "name": "Broken wild", "duration": 45 },
+          { "name": "I hear you", "duration": 45 },
+          { "name": "RICE RICE baby", "duration": 45 },
+          { "name": "Seizures support ", "duration": 30 },
+          { "name": "Shocking help", "duration": 30 }
+        ]
+      }
+    ],
+    "unitMeetingActivities": [
+      { "name": "Head, shoulders, knees and CONE", "duration": 15 },
+      { "name": "No doubt", "duration": 15 },
+      { "name": "Comfort for your discomfort", "duration": 60 },
+      { "name": "Road trip", "duration": 20 },
+      { "name": "Mastering The Moves", "duration": 30 },
+      { "name": "Message mayhem", "duration": 15 },
+      { "name": "Safe places", "duration": 45 },
+      { "name": "Equal everything", "duration": 20 },
+      { "name": "Ready steady teddy", "duration": 20 },
+      { "name": "Save your tail", "duration": 20 },
+      { "name": "Games maker", "duration": 60 },
+      { "name": "Know your strengths", "duration": 15 },
+      { "name": "Cheerleader vs sneerleader", "duration": 45 },
+      { "name": "Totally ga-ga", "duration": 20 },
+      { "name": "Touchdown", "duration": 45 },
+      { "name": "Surfs up!", "duration": 30 },
+      { "name": "Burning ball", "duration": 45 },
+      { "name": "Kho-kho", "duration": 30 },
+      { "name": "High flyers", "duration": 45 },
+      { "name": "Checking In", "duration": 15 },
+      { "name": "Tai One, Two Chi", "duration": 30 }
+    ]
+  },
+  {
+    "name": "Have Adventures",
+    "description": "Get out and about to explore the outdoors and nature.",
+    "interestBadges": [
+      {
+        "name": "Backwoods cooking",
+        "tasks": ["Fire it up", "What to make", "Challenge yourself"]
+      },
+      {
+        "name": "Geocaching",
+        "tasks": ["Geocache goal", "Create a cache", "Spread the word"]
+      },
+      {
+        "name": "Navigator",
+        "tasks": [
+          "Route out the best bits",
+          "Put transport to the test",
+          "No apps, just maps"
+        ]
+      },
+      {
+        "name": "Whittling",
+        "tasks": ["Whittle an instrument", "Whittle wood", "Whittle it"]
+      }
+    ],
+    "skillsBuilders": [
+      {
+        "name": "Explore",
+        "stage": 3,
+        "tasks": [
+          { "name": "A city walk", "duration": 60 },
+          { "name": "Navigate to treasure", "duration": 30 },
+          { "name": "Ray of light", "duration": 45 },
+          { "name": "Suss out the symbols", "duration": 20 },
+          { "name": "Travel tickets", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Camp",
+        "stage": 3,
+        "tasks": [
+          { "name": "All pitch in", "duration": 30 },
+          { "name": "Best fire for the job", "duration": 60 },
+          { "name": "Invent a gadget", "duration": 60 },
+          { "name": "Night under the stars", "duration": 30 },
+          { "name": "Waterproof!", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Explore",
+        "stage": 4,
+        "tasks": [
+          { "name": "Conquer contours", "duration": 45 },
+          { "name": "Get your snack on", "duration": 60 },
+          { "name": "Uncover and discover", "duration": 60 },
+          { "name": "Wish you were here", "duration": 60 },
+          { "name": "Written in the stars", "duration": 30 }
+        ]
+      },
+      {
+        "name": "Camp",
+        "stage": 4,
+        "tasks": [
+          { "name": "Camp café", "duration": 60 },
+          { "name": "Campfire playlist", "duration": 30 },
+          { "name": "Fireside feast", "duration": 60 },
+          { "name": "Stuck in the mud", "duration": 30 },
+          { "name": "Tent beetle", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Explore",
+        "stage": 5,
+        "tasks": [
+          { "name": "Explorer's handbook", "duration": 45 },
+          { "name": "G.P. Yes!", "duration": 60 },
+          { "name": "Root out the way", "duration": 45 },
+          { "name": "Travel like a pro", "duration": 60 },
+          { "name": "Wash it off", "duration": 60 }
+        ]
+      },
+      {
+        "name": "Camp",
+        "stage": 5,
+        "tasks": [
+          { "name": "Camp adventure", "duration": 60 },
+          { "name": "Healthy camp, happy camp!", "duration": 60 },
+          { "name": "Shelter sleepover", "duration": 60 },
+          { "name": "Tent doctor", "duration": 30 },
+          { "name": "Wild cooking", "duration": 60 }
+        ]
+      }
+    ],
+    "unitMeetingActivities": [
+      { "name": "Survive the wild", "duration": 20 },
+      { "name": "Easy breezy", "duration": 20 },
+      { "name": "Help", "duration": 15 },
+      { "name": "Warm in the Wild", "duration": 45 },
+      { "name": "Thirsty work", "duration": 20 },
+      { "name": "Get carried away", "duration": 45 },
+      { "name": "Animal athletes", "duration": 30 },
+      { "name": "Plastic planting", "duration": 45 },
+      { "name": "Biodiversity blitz", "duration": 20 },
+      { "name": "Catch of the day", "duration": 20 },
+      { "name": "A-Z of nature", "duration": 20 },
+      { "name": "Citrus feeder", "duration": 30 },
+      { "name": "Spaced out", "duration": 30 },
+      { "name": "Galactic getaway", "duration": 45 },
+      { "name": "Black hole breakout", "duration": 15 },
+      { "name": "Intergalactic snacks", "duration": 45 },
+      { "name": "Cosmic calculations", "duration": 15 },
+      { "name": "Solar simulation", "duration": 20 },
+      { "name": "Capture the Sun", "duration": 60 },
+      { "name": "Penny Hike", "duration": 60 }
+    ]
+  },
+  {
+    "name": "Take Action",
+    "description": "Use your voice to make positive change in your communities.",
+    "interestBadges": [
+      {
+        "name": "Be prepared",
+        "tasks": ["72-hour bag", "Safe places", "Boost morale"]
+      },
+      {
+        "name": "Campaigning",
+        "tasks": [
+          "Rock the playlist",
+          "Make yourself heard",
+          "The more the merrier"
+        ]
+      },
+      {
+        "name": "Conscious consumer",
+        "tasks": ["Cook ethically", "Style ethically", "Advertise ethically"]
+      },
+      {
+        "name": "Craftivism",
+        "tasks": [
+          "Make a mindful present",
+          "Human notice board",
+          "Take it public"
+        ]
+      }
+    ],
+    "skillsBuilders": [
+      {
+        "name": "Make change",
+        "stage": 3,
+        "tasks": [
+          { "name": "Breaking down barriers", "duration": 60 },
+          { "name": "Edible actions", "duration": 30 },
+          { "name": "I can change that", "duration": 30 },
+          { "name": "Memorable messages", "duration": 60 },
+          { "name": "StART making change", "duration": 60 }
+        ]
+      },
+      {
+        "name": "Influence",
+        "stage": 3,
+        "tasks": [
+          { "name": "Believe it or not", "duration": 30 },
+          { "name": "Comeback club", "duration": 45 },
+          { "name": "Decisions, decisions", "duration": 45 },
+          { "name": "Make my voice louder", "duration": 45 },
+          { "name": "Persuasive performers", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Make change",
+        "stage": 4,
+        "tasks": [
+          { "name": "Big changes start with small steps", "duration": 45 },
+          { "name": "Money and a message", "duration": 60 },
+          { "name": "Testing out tactics", "duration": 60 },
+          { "name": "Wear your heart on your sleeve", "duration": 60 },
+          { "name": "Who cares?", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Influence",
+        "stage": 4,
+        "tasks": [
+          { "name": "Better letter forward", "duration": 45 },
+          { "name": "Get heard", "duration": 60 },
+          { "name": "MP hear me", "duration": 45 },
+          { "name": "Say it with passion", "duration": 45 },
+          { "name": "Womanifestos", "duration": 30 }
+        ]
+      },
+      {
+        "name": "Make change",
+        "stage": 5,
+        "tasks": [
+          { "name": "Areas if influence", "duration": 45 },
+          { "name": "Be zine, be heard", "duration": 60 },
+          { "name": "Campaigning codebreakers", "duration": 45 },
+          { "name": "Mini manifesto", "duration": 60 },
+          { "name": "Pack it in", "duration": 60 }
+        ]
+      },
+      {
+        "name": "Influence",
+        "stage": 5,
+        "tasks": [
+          { "name": "Advert inspector", "duration": 45 },
+          { "name": "Convince me!", "duration": 45 },
+          { "name": "Donation stations", "duration": 60 },
+          { "name": "People power", "duration": 30 },
+          { "name": "Snowflake connectors", "duration": 60 }
+        ]
+      }
+    ],
+    "unitMeetingActivities": [
+      { "name": "Wrap it up", "duration": 45 },
+      { "name": "Flash mob", "duration": 60 },
+      { "name": "Recycle revival", "duration": 60 },
+      { "name": "Why, Why Why", "duration": 60 },
+      { "name": "Litter Lotto", "duration": 45 },
+      { "name": "Architects for Action", "duration": 60 },
+      { "name": "To flush or not to flush", "duration": 20 },
+      { "name": "K is for kindness", "duration": 30 },
+      { "name": "Packaging puzzles", "duration": 30 },
+      { "name": "Go wild!", "duration": 45 },
+      { "name": "Talk on the wild side", "duration": 30 },
+      { "name": "The power of positivity", "duration": 30 },
+      { "name": "Carbon calculator", "duration": 20 },
+      { "name": "Global goalie", "duration": 30 },
+      { "name": "A game of no noise", "duration": 30 },
+      { "name": "Man on the moon", "duration": 30 },
+      { "name": "Animal advantages", "duration": 30 },
+      { "name": "Drawing distractions", "duration": 45 },
+      { "name": "Binary breakdown", "duration": 45 },
+      { "name": "One small step", "duration": 45 },
+      { "name": "People in the News", "duration": 30 },
+      { "name": "Awful Adverts", "duration": 45 }
+    ]
+  },
+  {
+    "name": "Skills For My Future",
+    "description": "Look to the future and build your skills to become independent and successful in life.",
+    "interestBadges": [
+      {
+        "name": "Fixing",
+        "tasks": [
+          "Fix something you wear",
+          "Fix something that moves",
+          "Fix something at home"
+        ]
+      },
+      {
+        "name": "Investigating",
+        "tasks": [
+          "Be a forensic investigator",
+          "Be a scientist",
+          "Be a journalist"
+        ]
+      },
+      {
+        "name": "Saver",
+        "tasks": ["Time challenge", "Live for less", "Save the planet"]
+      },
+      {
+        "name": "Upcycling",
+        "tasks": ["Something useful", "Upcycle big", "Upcycling tips"]
+      }
+    ],
+    "skillsBuilders": [
+      {
+        "name": "Lead",
+        "stage": 3,
+        "tasks": [
+          { "name": "Cool it", "duration": 30 },
+          { "name": "I know my values", "duration": 20 },
+          { "name": "Mission managed", "duration": 45 },
+          { "name": "Price up", "duration": 30 },
+          { "name": "That's not what I meant", "duration": 30 }
+        ]
+      },
+      {
+        "name": "Live smart",
+        "stage": 3,
+        "tasks": [
+          { "name": "Guess who?", "duration": 60 },
+          { "name": "Make your case", "duration": 60 },
+          { "name": "Role up!", "duration": 45 },
+          { "name": "Sauce up your life", "duration": 60 },
+          { "name": "Tasty testing", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Lead",
+        "stage": 4,
+        "tasks": [
+          { "name": "Chain reaction", "duration": 30 },
+          { "name": "Rule changer", "duration": 45 },
+          { "name": "Show it off", "duration": 45 },
+          { "name": "Take a vote", "duration": 30 },
+          { "name": "Tell them how its done", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Live smart",
+        "stage": 4,
+        "tasks": [
+          { "name": "Bank it", "duration": 60 },
+          { "name": "Build a board", "duration": 60 },
+          { "name": "Life hacks", "duration": 20 },
+          { "name": "Nutrition mission", "duration": 60 },
+          { "name": "Trust your gut", "duration": 45 }
+        ]
+      },
+      {
+        "name": "Lead",
+        "stage": 5,
+        "tasks": [
+          { "name": "Enter the mentor", "duration": 60 },
+          { "name": "Leader style guide", "duration": 45 },
+          { "name": "Let's celebrate", "duration": 45 },
+          { "name": "Pick your battles", "duration": 30 },
+          { "name": "That's not fair", "duration": 30 }
+        ]
+      },
+      {
+        "name": "Live smart",
+        "stage": 5,
+        "tasks": [
+          { "name": "Budget builder", "duration": 30 },
+          { "name": "DIY doctor", "duration": 45 },
+          { "name": "Feeling hot, hot, hot", "duration": 60 },
+          { "name": "Pitch your pals", "duration": 60 },
+          { "name": "Sliding scale", "duration": 30 }
+        ]
+      }
+    ],
+    "unitMeetingActivities": [
+      { "name": "Come on, coach", "duration": 30 },
+      { "name": "Twist that dish", "duration": 60 },
+      { "name": "Patch up plastics", "duration": 15 },
+      { "name": "Do It Yourshelf", "duration": 60 },
+      { "name": "Painting under pressure", "duration": 30 },
+      { "name": "Lights out", "duration": 45 },
+      { "name": "Run the risk", "duration": 15 },
+      { "name": "Savvy shopper", "duration": 60 },
+      { "name": "Treasury takeover", "duration": 45 },
+      { "name": "Production line", "duration": 60 },
+      { "name": "Bank or bust", "duration": 20 },
+      { "name": "Pay your way", "duration": 30 },
+      { "name": "Paper pilots", "duration": 20 },
+      { "name": "Bionic body parts", "duration": 60 },
+      { "name": "Collision course", "duration": 20 },
+      { "name": "Interstellar engineers", "duration": 30 },
+      { "name": "Information overload", "duration": 20 },
+      { "name": "Instruction disruption", "duration": 30 },
+      { "name": "Can’t believe it’s butter", "duration": 45 },
+      { "name": "Rainbow Challenge", "duration": 60 }
+    ]
+  }
+]
