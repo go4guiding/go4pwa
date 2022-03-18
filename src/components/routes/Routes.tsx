@@ -38,10 +38,20 @@ function Routes(props: RoutesProps) {
 
   const renderRoute = useCallback(
     (routeProps: RouteProps, isPrivate: boolean = false) => {
-      const { path, component: Component, name, ...otherProps } = routeProps;
-      let element = Component && <Component />;
+      const {
+        path,
+        type,
+        component: Component,
+        name,
+        ...otherProps
+      } = routeProps;
 
-      if (!isAuthorised && isPrivate)
+      let element = Component && <Component />;
+      const isSignInRequired = !isAuthorised && isPrivate;
+      const isUnathorisedAccess =
+        isPrivate && type !== 'public' && user?.role !== type;
+
+      if (isSignInRequired)
         element = (
           <Navigate
             key={name}
@@ -49,6 +59,8 @@ function Routes(props: RoutesProps) {
             replace
           />
         );
+      else if (isUnathorisedAccess)
+        element = <div>{'Unauthorised access'}</div>;
 
       return <Route {...otherProps} key={name} path={path} element={element} />;
     },
