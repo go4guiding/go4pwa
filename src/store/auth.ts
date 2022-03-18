@@ -31,7 +31,7 @@ import { auth } from '../firebase';
 const EMAIL_SUFFIX = '@go4guides.co.uk';
 
 const initialState: AuthState = {
-  isAuthenticated: false,
+  isValid: false,
   user: null,
   isLoading: true,
   error: null
@@ -88,13 +88,14 @@ export const verifyAuth = createAsyncThunk(
 
 // Functions
 export async function getSignUpTokenResult(
-  token: string
+  token: string,
+  onlyOnce: boolean = true
 ): Promise<SignUpTokenResult> {
   const data = await new Promise<SignUpTokenResult>((resolve) =>
     onValue(
       ref(getDatabase(), `signUpTokens/${token}`),
       (snapshot) => resolve(snapshot.val()),
-      { onlyOnce: true }
+      { onlyOnce }
     )
   );
 
@@ -109,10 +110,23 @@ export async function getSignUpTokenResult(
 }
 
 export function onAuthChanged(
-  dispatch: ThunkDispatch<AuthState, undefined, AnyAction>
+  dispatch: ThunkDispatch<AuthState, undefined, AnyAction>,
+  onlyOnce: boolean = false
 ) {
-  onAuthStateChanged(auth, async (user) => dispatch(verifyAuth(user)));
-  onIdTokenChanged(auth, async (user) => dispatch(verifyAuth(user)));
+  const unsubscribe = onAuthStateChanged(auth, async (user) => {
+    dispatch(verifyAuth(user));
+    if (onlyOnce) unsubscribe();
+  });
+}
+
+export function onTokenChanged(
+  dispatch: ThunkDispatch<AuthState, undefined, AnyAction>,
+  onlyOnce: boolean = false
+) {
+  const unsubscribe = onIdTokenChanged(auth, async (user) => {
+    dispatch(verifyAuth(user));
+    if (onlyOnce) unsubscribe();
+  });
 }
 
 // Store slice
@@ -129,7 +143,7 @@ const slice = createSlice({
     builder.addCase(signUp.fulfilled, (state, action) => {
       console.log('auth/signUp.fulfilled', action);
       // state.user = action.payload;
-      state.isAuthenticated = true;
+      state.isValid = true;
       state.isLoading = false;
     });
 
@@ -147,7 +161,7 @@ const slice = createSlice({
     builder.addCase(signIn.fulfilled, (state, action) => {
       console.log('auth/signIn.fulfilled', action);
       // state.user = action.payload;
-      state.isAuthenticated = true;
+      state.isValid = true;
       state.isLoading = false;
     });
 
@@ -160,7 +174,7 @@ const slice = createSlice({
     // Sign Out
     builder.addCase(signOut.fulfilled, (state) => {
       console.log('auth/signOut.fulfilled');
-      state.isAuthenticated = false;
+      state.isValid = false;
       state.user = null;
     });
 
@@ -171,7 +185,7 @@ const slice = createSlice({
 
     // Verify Auth
     builder.addCase(verifyAuth.fulfilled, (state, action) => {
-      state.isAuthenticated = !!action.payload;
+      state.isValid = !!action.payload;
       state.user = action.payload as UserState | null;
       state.isLoading = false;
       state.error = null;
