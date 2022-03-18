@@ -69,6 +69,8 @@ function Routes(props: RoutesProps) {
     <RouterRoutes>
       {publicRoutes.map((route) => renderRoute(route))}
       {privateRoutes.map((route) => renderRoute(route, true))}
+
+      <Route element={() => 'Page Not Found'} />
     </RouterRoutes>
   );
 }
