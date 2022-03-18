@@ -69,7 +69,7 @@ function Routes(props: RoutesProps) {
 
   useEffect(() => {
     if (!user || !user.role) return setPrivateRoutes([]);
-    getPrivateRoutes('admin')
+    getPrivateRoutes(user.role)
       .then(setPrivateRoutes)
       .catch((error) => {
         console.error(error);
