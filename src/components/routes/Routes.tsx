@@ -48,8 +48,7 @@ function Routes(props: RoutesProps) {
 
       let element = Component && <Component />;
       const isSignInRequired = !isAuthorised && isPrivate;
-      const isUnathorisedAccess =
-        isPrivate && type !== 'public' && user?.role !== type;
+      const isUnathorisedAccess = !isSignInRequired && user?.role !== type;
 
       if (isSignInRequired)
         element = (
