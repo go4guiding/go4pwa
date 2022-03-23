@@ -14,7 +14,7 @@ type SpinnerProps = HTMLProps<HTMLDivElement> & {
 function Spinner(props: SpinnerProps) {
   const {
     className,
-    color,
+    color = 'default',
     large = false,
     busy = true,
     label = 'The content is loading',
@@ -22,11 +22,7 @@ function Spinner(props: SpinnerProps) {
   } = props;
 
   const size = (large && styles.large) || null;
-  const newClassName = buildClassName(
-    styles[color || 'default'],
-    size,
-    className
-  );
+  const newClassName = buildClassName(styles[color], size, className);
 
   return (
     <div
