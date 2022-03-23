@@ -8,9 +8,9 @@ $primary: #c40063;
 $primary-70: #d64c91;
 $primary-20: #f3cce0;
 
-$accent: #ef3f30;
-$accent-70: #f47a6e;
-$accent-20: #fcd9d6;
+$secondary: #ef3f30;
+$secondary-70: #f47a6e;
+$secondary-20: #fcd9d6;
 
 $grey: #a7a9ac;
 $grey-50: #d3d4d5;
@@ -92,4 +92,28 @@ $breakpoints-max: (
   md: 61.9375rem,
   lg: 74.9375rem,
   xl: 99.9375rem
+);
+
+// Colour Collections
+$theme-colours: (
+  'primary',
+  'primary-70',
+  'primary-20',
+  'secondary',
+  'secondary-70',
+  'secondary-20',
+  'grey',
+  'grey-50',
+  'danger',
+  'danger-light',
+  'danger-dark',
+  'warning',
+  'warning-light',
+  'warning-dark',
+  'success',
+  'success-light',
+  'success-dark',
+  'info',
+  'info-light',
+  'info-dark'
 );
