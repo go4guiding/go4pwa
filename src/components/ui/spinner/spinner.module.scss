@@ -1,6 +1,7 @@
 @use '../../../assets/stylesheets/animations' as *;
+@use '../../../assets/stylesheets/variables' as *;
 
-.base {
+.default {
   display: inline-block;
   width: 2rem;
   height: 2rem;
@@ -9,4 +10,17 @@
   border-right-color: transparent !important;
   border-radius: 50%;
   animation: 0.75s linear infinite rotate;
+}
+
+@each $colour in $theme-colours {
+  .#{$colour} {
+    @extend .default;
+    border-color: var(--#{$colour});
+  }
+}
+
+.large {
+  width: 4rem;
+  height: 4rem;
+  border-width: 0.5rem;
 }
