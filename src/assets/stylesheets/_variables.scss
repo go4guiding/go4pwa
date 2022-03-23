@@ -1,0 +1,95 @@
+// Typography
+$font-family: 'Trebuchet MS';
+$font-family-bold: 'Trebuchet MS Bold';
+$font-size-base: 1em;
+
+// Colours
+$primary: #c40063;
+$primary-70: #d64c91;
+$primary-20: #f3cce0;
+
+$accent: #ef3f30;
+$accent-70: #f47a6e;
+$accent-20: #fcd9d6;
+
+$grey: #a7a9ac;
+$grey-50: #d3d4d5;
+
+// Award Theme Colkours
+$know-myself: #01aeef;
+$know-myself-70: #57c3e8;
+$know-myself-20: #c6eafa;
+
+$express-myself: #ed028c;
+$express-myself-70: #ef97a7;
+$express-myself-20: #fad5e5;
+
+$be-well: #8a52a0;
+$be-well-70: #b293c0;
+$be-well-20: #dfd3e8;
+
+$have-adventures: #71bf44;
+$have-adventures-70: #9cce77;
+$have-adventures-20: #dfeed4;
+
+$take-action: #f68e1d;
+$take-action-70: #fab682;
+$take-action-20: #fee5c9;
+
+$skills-for-my-future: #f697bf;
+$skills-for-my-future-70: #f9c9dc;
+$skills-for-my-future-20: #fad5e5;
+// ---
+
+// Context Colours
+$danger: #f44336;
+$danger-light: #ffcdd2;
+$danger-dark: #d32f2f;
+
+$warning: #ff9800;
+$warning-light: #ffe0b2;
+$warning-dark: #f57c00;
+
+$success: #8bc34a;
+$success-light: #dcedc8;
+$success-dark: #689f38;
+
+$info: #03a9f4;
+$info-light: #b3e5fc;
+$info-dark: #0288d1;
+// ---
+
+$black: #343434;
+$white: #ffffff;
+
+$bronze: #7b4c15;
+$silver: #9ca3a9;
+$gold: #c99617;
+
+$background-color: $white;
+$text-color: $black;
+$link-color: $primary;
+
+// Gutters
+$gutter-base: 1rem;
+
+// Grid
+$grid-columns: 12;
+
+// Breakpoints
+$breakpoints-min: (
+  xs: 0,
+  sm: 36rem,
+  md: 48rem,
+  lg: 62rem,
+  xl: 75rem,
+  xxl: 100rem
+);
+
+$breakpoints-max: (
+  xs: 35.9375rem,
+  sm: 47.9375rem,
+  md: 61.9375rem,
+  lg: 74.9375rem,
+  xl: 99.9375rem
+);
