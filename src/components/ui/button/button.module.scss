@@ -1,0 +1,77 @@
+@use 'sass:color';
+
+@use '../../../assets/stylesheets/variables' as *;
+@use '../../../assets/stylesheets/functions' as *;
+
+$hover-lightness: -10%;
+$focus-lightness: 50%;
+
+.default {
+  appearance: none;
+  display: inline-block;
+  width: auto;
+
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-sm);
+
+  font-size: var(--font-size);
+  font-weight: 400;
+
+  line-height: 1.375;
+  text-align: center;
+  text-decoration: none;
+
+  vertical-align: middle;
+  cursor: pointer;
+
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  user-select: none;
+
+  &:not(:disabled) {
+    color: contrast-color($grey);
+    background-color: $grey;
+  }
+
+  &:not(:disabled):hover {
+    $btn-color: color.adjust($grey, $lightness: $hover-lightness);
+    color: contrast-color($btn-color);
+    background-color: $btn-color;
+  }
+
+  &:focus-visible,
+  &:focus {
+    outline: 0.3125rem solid color.adjust($grey, $lightness: $focus-lightness);
+  }
+}
+
+@each $colour, $value in $theme-colours {
+  .#{$colour} {
+    @extend .default;
+
+    &:not(:disabled) {
+      color: contrast-color($value);
+      background-color: var(--#{$colour});
+    }
+
+    &:not(:disabled):hover {
+      $btn-color: color.adjust($value, $lightness: $hover-lightness);
+      color: contrast-color($btn-color);
+      background-color: $btn-color;
+    }
+
+    &:focus-visible,
+    &:focus {
+      outline: 0.3125rem
+        solid
+        color.adjust($value, $lightness: $focus-lightness);
+    }
+  }
+}
+
+.block {
+  display: block;
+  width: 100%;
+}

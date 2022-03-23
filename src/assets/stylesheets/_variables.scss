@@ -73,6 +73,10 @@ $link-color: $primary;
 // Gutters
 $gutter-base: 1rem;
 
+// Borders
+$border-radius: 0.625rem; // 10px;
+$border-radius-sm: 0.3125rem; // 5px;
+
 // Grid
 $grid-columns: 12;
 
@@ -96,24 +100,26 @@ $breakpoints-max: (
 
 // Colour Collections
 $theme-colours: (
-  'primary',
-  'primary-70',
-  'primary-20',
-  'secondary',
-  'secondary-70',
-  'secondary-20',
-  'grey',
-  'grey-50',
-  'danger',
-  'danger-light',
-  'danger-dark',
-  'warning',
-  'warning-light',
-  'warning-dark',
-  'success',
-  'success-light',
-  'success-dark',
-  'info',
-  'info-light',
-  'info-dark'
+  'primary': $primary,
+  'primary-70': $primary-70,
+  'primary-20': $primary-20,
+  'secondary': $secondary,
+  'secondary-70': $secondary-70,
+  'secondary-20': $secondary-20,
+  'dark': $black,
+  'light': $white,
+  'grey': $grey,
+  'grey-50': $grey-50,
+  'danger': $danger,
+  'danger-light': $danger-light,
+  'danger-dark': $danger-dark,
+  'warning': $warning,
+  'warning-light': $warning-light,
+  'warning-dark': $warning-dark,
+  'success': $success,
+  'success-light': $success-light,
+  'success-dark': $success-dark,
+  'info': $info,
+  'info-light': $info-light,
+  'info-dark': $info-dark
 );
