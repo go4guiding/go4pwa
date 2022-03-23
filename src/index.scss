@@ -22,6 +22,23 @@
   --background-color: #{$background-color};
   --text-color: #{$text-color};
 
+  // Context Colours
+  --g4-danger: #{$danger};
+  --g4-danger-light: #{$danger-light};
+  --g4-danger-dark: #{$danger-dark};
+
+  --g4-warning: #{$warning};
+  --g4-warning-light: #{$warning-light};
+  --g4-warning-dark: #{$warning-dark};
+
+  --g4-success: #{$success};
+  --g4-success-light: #{$success-light};
+  --g4-success-dark: #{$success-dark};
+
+  --g4-info: #{$info};
+  --g4-info-light: #{$info-light};
+  --g4-info-dark: #{$info-dark};
+
   // Award Themes
   --know-myself: #{$know-myself};
   --know-myself-70: #{$know-myself-70};
