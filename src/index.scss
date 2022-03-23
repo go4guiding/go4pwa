@@ -6,7 +6,7 @@
   // Typography
   --font-family: #{$font-family};
   --font-family-bold: #{$font-family-bold};
-  --font-size-base: #{$font-size-base};
+  --font-size: #{$font-size-base};
 
   // Colours
   --primary: #{$primary};
@@ -16,6 +16,9 @@
   --secondary: #{$secondary};
   --secondary-70: #{$secondary-70};
   --secondary-20: #{$secondary-20};
+
+  --dark: #{$black};
+  --light: #{$white};
 
   --grey: #{$grey};
   --grey-50: #{$grey-50};
@@ -62,12 +65,14 @@
 
   // Misc
   --gutters: #{$gutter-base};
+  --border-radius: #{$border-radius};
+  --border-radius-sm: #{$border-radius-sm};
   --grid-columns: #{$grid-columns};
 }
 
 body {
   font-family: var(--font-family);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size);
   background-color: var(--background-color);
   color: var(--text-color);
 }
