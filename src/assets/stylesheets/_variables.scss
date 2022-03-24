@@ -98,7 +98,7 @@ $breakpoints-max: (
   xl: 99.9375rem
 );
 
-// Colour Collections
+// Colour maps
 $theme-colours: (
   'primary': $primary,
   'primary-70': $primary-70,
@@ -122,4 +122,25 @@ $theme-colours: (
   'info': $info,
   'info-light': $info-light,
   'info-dark': $info-dark
+);
+
+$award-theme-colours: (
+  'know-myself': $know-myself,
+  'know-myself-70': $know-myself-70,
+  'know-myself-20': $know-myself-20,
+  'express-myself': $express-myself,
+  'express-myself-70': $express-myself-70,
+  'express-myself-20': $express-myself-20,
+  'be-well': $be-well,
+  'be-well-70': $be-well-70,
+  'be-well-20': $be-well-20,
+  'have-adventures': $have-adventures,
+  'have-adventures-70': $have-adventures-70,
+  'have-adventures-20': $have-adventures-20,
+  'take-action': $take-action,
+  'take-action-70': $take-action-70,
+  'take-action-20': $take-action-20,
+  'skills-for-my-future': $skills-for-my-future,
+  'skills-for-my-future-70': $skills-for-my-future-70,
+  'skills-for-my-future-20': $skills-for-my-future-20
 );
