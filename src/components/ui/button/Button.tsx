@@ -1,21 +1,15 @@
 import {
-  ButtonHTMLAttributes,
-  DetailedHTMLProps,
   PropsWithChildren,
   useState,
   MouseEvent as ReactMouseEvent
 } from 'react';
 
 import { ThemeColour } from 'types/app';
+import { HTMLButtonProps } from 'types/html';
 import buildClassName from 'utilities/buildClassName';
 import styles from './button.module.scss';
 
 type ButtonMouseEvent = ReactMouseEvent<HTMLButtonElement, MouseEvent>;
-
-type HTMLButtonProps = DetailedHTMLProps<
-  ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
->;
 
 type ButtonProps = HTMLButtonProps &
   PropsWithChildren<{
