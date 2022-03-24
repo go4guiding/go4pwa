@@ -1,0 +1,22 @@
+$alignments: (
+  'left': 'flex-start',
+  'center': 'center',
+  'right': 'flex-end'
+);
+
+.base {
+  @extend .container;
+  display: flex;
+  align-items: center;
+}
+
+.fluid {
+  @extend .base;
+  @extend .container-fluid;
+}
+
+@each $align, $value in $alignments {
+  .#{$align} {
+    justify-content: #{$value};
+  }
+}
