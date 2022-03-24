@@ -1,32 +1,28 @@
-import { DetailedHTMLProps, HTMLAttributes, PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 
+import { HTMLDivProps } from 'types/html';
 import buildClassName from 'utilities/buildClassName';
 import styles from './grid.module.scss';
-
-type HTMLDivProps = DetailedHTMLProps<
-  HTMLAttributes<HTMLDivElement>,
-  HTMLDivElement
->;
 
 type GridProps = HTMLDivProps &
   PropsWithChildren<{
     columns: number;
     noGutters?: boolean;
-    condensed?: boolean;
+    collapse?: boolean;
   }>;
 
 function Grid(props: GridProps) {
-  const { children, className, columns, noGutters, condensed, ...otherProps } =
+  const { children, className, columns, noGutters, collapse, ...otherProps } =
     props;
 
   const columnClassName = styles[`columns-${columns}`];
   const gutterClassName = (noGutters && styles[`no-gutters`]) || null;
-  const condensedClassName = (condensed && styles.condensed) || null;
+  const collapseClassName = (collapse && styles.collapse) || null;
   const newClassName = buildClassName(
     styles.container,
     columnClassName,
     gutterClassName,
-    condensedClassName,
+    collapseClassName,
     className
   );
 
