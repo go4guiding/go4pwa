@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react';
 
 import { AwardThemeColour } from 'types/app';
 import { HTMLElementProps } from 'types/html';
-import buildClassName from 'utilities/buildClassName';
+import { buildClassName } from 'utilities/string';
 import Toolbar, { ToolbarProps } from 'components/ui/toolbar';
 import styles from './appbar.module.scss';
 

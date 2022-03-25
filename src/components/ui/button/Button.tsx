@@ -6,7 +6,7 @@ import {
 
 import { ThemeColour } from 'types/app';
 import { HTMLButtonProps } from 'types/html';
-import buildClassName from 'utilities/buildClassName';
+import { buildClassName } from 'utilities/string';
 import styles from './button.module.scss';
 
 type ButtonMouseEvent = ReactMouseEvent<HTMLButtonElement, MouseEvent>;
@@ -48,7 +48,6 @@ function Button(props: ButtonProps) {
     <button
       type="button"
       {...otherProps}
-      role="button"
       aria-pressed={isPressed}
       aria-disabled={disabled}
       disabled={disabled}

@@ -1,7 +1,7 @@
 import { HTMLProps } from 'react';
 import { ThemeColour } from 'types/app';
 
-import buildClassName from 'utilities/buildClassName';
+import { buildClassName } from 'utilities/string';
 import styles from './spinner.module.scss';
 
 type SpinnerProps = HTMLProps<HTMLDivElement> & {

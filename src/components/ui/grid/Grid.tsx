@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 
 import { HTMLDivProps } from 'types/html';
-import buildClassName from 'utilities/buildClassName';
+import { buildClassName } from 'utilities/string';
 import styles from './grid.module.scss';
 
 type GridProps = HTMLDivProps &
