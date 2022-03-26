@@ -1,4 +1,6 @@
 @use './assets/stylesheets/variables' as *;
+@use './assets/stylesheets/mixins' as *;
+
 @import './assets/stylesheets/normalise';
 @import './assets/stylesheets/fonts';
 
@@ -6,15 +8,19 @@
   // Typography
   --font-family: #{$font-family};
   --font-family-bold: #{$font-family-bold};
-  --font-size-base: #{$font-size-base};
+  --font-size: #{$font-size-base};
 
   // Colours
-  --g4-primary: #{$primary};
-  --g4-primary-70: #{$primary-70};
-  --g4-primary-20: #{$primary-20};
-  --g4-accent: #{$accent};
-  --g4-accent-70: #{$accent-70};
-  --g4-accent-20: #{$accent-20};
+  --primary: #{$primary};
+  --primary-70: #{$primary-70};
+  --primary-20: #{$primary-20};
+
+  --secondary: #{$secondary};
+  --secondary-70: #{$secondary-70};
+  --secondary-20: #{$secondary-20};
+
+  --dark: #{$black};
+  --light: #{$white};
 
   --grey: #{$grey};
   --grey-50: #{$grey-50};
@@ -23,21 +29,21 @@
   --text-color: #{$text-color};
 
   // Context Colours
-  --g4-danger: #{$danger};
-  --g4-danger-light: #{$danger-light};
-  --g4-danger-dark: #{$danger-dark};
+  --danger: #{$danger};
+  --danger-light: #{$danger-light};
+  --danger-dark: #{$danger-dark};
 
-  --g4-warning: #{$warning};
-  --g4-warning-light: #{$warning-light};
-  --g4-warning-dark: #{$warning-dark};
+  --warning: #{$warning};
+  --warning-light: #{$warning-light};
+  --warning-dark: #{$warning-dark};
 
-  --g4-success: #{$success};
-  --g4-success-light: #{$success-light};
-  --g4-success-dark: #{$success-dark};
+  --success: #{$success};
+  --success-light: #{$success-light};
+  --success-dark: #{$success-dark};
 
-  --g4-info: #{$info};
-  --g4-info-light: #{$info-light};
-  --g4-info-dark: #{$info-dark};
+  --info: #{$info};
+  --info-light: #{$info-light};
+  --info-dark: #{$info-dark};
 
   // Award Themes
   --know-myself: #{$know-myself};
@@ -61,12 +67,41 @@
 
   // Misc
   --gutters: #{$gutter-base};
+  --border-radius: #{$border-radius};
+  --border-radius-sm: #{$border-radius-sm};
   --grid-columns: #{$grid-columns};
 }
 
 body {
   font-family: var(--font-family);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size);
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+// Classes
+.spacer {
+  flex: 1;
+}
+
+.container,
+.container-fluid {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 0.625rem; // 0 10px
+
+  &:not(.container-fluid) {
+    @include breakpoint-up(sm) {
+      max-width: 90%;
+    }
+
+    @include breakpoint-up(md) {
+      max-width: 75%;
+    }
+
+    // @include breakpoint-up(lg) {
+    //   max-width: 53.125rem; // 800px;
+    // }
+  }
 }

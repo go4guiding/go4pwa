@@ -8,9 +8,9 @@ $primary: #c40063;
 $primary-70: #d64c91;
 $primary-20: #f3cce0;
 
-$accent: #ef3f30;
-$accent-70: #f47a6e;
-$accent-20: #fcd9d6;
+$secondary: #ef3f30;
+$secondary-70: #f47a6e;
+$secondary-20: #fcd9d6;
 
 $grey: #a7a9ac;
 $grey-50: #d3d4d5;
@@ -73,6 +73,10 @@ $link-color: $primary;
 // Gutters
 $gutter-base: 1rem;
 
+// Borders
+$border-radius: 0.625rem; // 10px;
+$border-radius-sm: 0.3125rem; // 5px;
+
 // Grid
 $grid-columns: 12;
 
@@ -92,4 +96,51 @@ $breakpoints-max: (
   md: 61.9375rem,
   lg: 74.9375rem,
   xl: 99.9375rem
+);
+
+// Colour maps
+$theme-colours: (
+  'primary': $primary,
+  'primary-70': $primary-70,
+  'primary-20': $primary-20,
+  'secondary': $secondary,
+  'secondary-70': $secondary-70,
+  'secondary-20': $secondary-20,
+  'dark': $black,
+  'light': $white,
+  'grey': $grey,
+  'grey-50': $grey-50,
+  'danger': $danger,
+  'danger-light': $danger-light,
+  'danger-dark': $danger-dark,
+  'warning': $warning,
+  'warning-light': $warning-light,
+  'warning-dark': $warning-dark,
+  'success': $success,
+  'success-light': $success-light,
+  'success-dark': $success-dark,
+  'info': $info,
+  'info-light': $info-light,
+  'info-dark': $info-dark
+);
+
+$award-theme-colours: (
+  'know-myself': $know-myself,
+  'know-myself-70': $know-myself-70,
+  'know-myself-20': $know-myself-20,
+  'express-myself': $express-myself,
+  'express-myself-70': $express-myself-70,
+  'express-myself-20': $express-myself-20,
+  'be-well': $be-well,
+  'be-well-70': $be-well-70,
+  'be-well-20': $be-well-20,
+  'have-adventures': $have-adventures,
+  'have-adventures-70': $have-adventures-70,
+  'have-adventures-20': $have-adventures-20,
+  'take-action': $take-action,
+  'take-action-70': $take-action-70,
+  'take-action-20': $take-action-20,
+  'skills-for-my-future': $skills-for-my-future,
+  'skills-for-my-future-70': $skills-for-my-future-70,
+  'skills-for-my-future-20': $skills-for-my-future-20
 );
