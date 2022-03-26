@@ -1,6 +1,25 @@
 @use 'sass:map';
 @use './variables' as *;
 
+// Buttons
+@mixin button-states($color) {
+  &:not(:disabled) {
+    color: contrast-color($color);
+    background-color: $color;
+  }
+
+  &:not(:disabled):hover {
+    $btn-color: color.adjust($color, $lightness: $hover-lightness);
+    color: contrast-color($btn-color);
+    background-color: $btn-color;
+  }
+
+  &:focus-visible,
+  &:focus {
+    outline: 0.3125rem solid color.adjust($color, $lightness: $focus-lightness);
+  }
+}
+
 // Breakpoints
 @mixin breakpoint-up($breakpoint, $orientation: null) {
   $min-width: map.get($breakpoints-min, $breakpoint);

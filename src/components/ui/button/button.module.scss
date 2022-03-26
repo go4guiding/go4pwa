@@ -2,6 +2,7 @@
 
 @use '../../../assets/stylesheets/variables' as *;
 @use '../../../assets/stylesheets/functions' as *;
+@use '../../../assets/stylesheets/mixins' as *;
 
 $hover-lightness: -10%;
 $focus-lightness: 40%;
@@ -30,44 +31,13 @@ $focus-lightness: 40%;
 
   user-select: none;
 
-  &:not(:disabled) {
-    color: contrast-color($grey);
-    background-color: $grey;
-  }
-
-  &:not(:disabled):hover {
-    $btn-color: color.adjust($grey, $lightness: $hover-lightness);
-    color: contrast-color($btn-color);
-    background-color: $btn-color;
-  }
-
-  &:focus-visible,
-  &:focus {
-    outline: 0.3125rem solid color.adjust($grey, $lightness: $focus-lightness);
-  }
+  @include button-states($grey);
 }
 
 @each $colour, $value in $theme-colours {
   .#{$colour} {
     @extend .default;
-
-    &:not(:disabled) {
-      color: contrast-color($value);
-      background-color: var(--#{$colour});
-    }
-
-    &:not(:disabled):hover {
-      $btn-color: color.adjust($value, $lightness: $hover-lightness);
-      color: contrast-color($btn-color);
-      background-color: $btn-color;
-    }
-
-    &:focus-visible,
-    &:focus {
-      outline: 0.3125rem
-        solid
-        color.adjust($value, $lightness: $focus-lightness);
-    }
+    @include button-states($value);
   }
 }
 
