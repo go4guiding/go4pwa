@@ -1,11 +1,21 @@
 @use 'sass:color';
 @use 'variables' as *;
 
-@function contrast-color($color, $threshold: 50) {
+$threshold: 50;
+
+@function contrast-color($color, $cssVariable: true) {
   $contrast: var(--light);
+
+  @if ($cssVariable == false) {
+    $contrast: $white;
+  }
 
   @if (color.lightness($color) > $threshold) {
     $contrast: var(--dark);
+
+    @if ($cssVariable == false) {
+      $contrast: $black;
+    }
   }
 
   @return $contrast;
