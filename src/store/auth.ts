@@ -157,14 +157,7 @@ const slice = createSlice({
       state.isLoading = true;
     });
 
-    // builder.addCase(signUp.fulfilled, (state, action) => {
-    //   console.log('auth/signUp.fulfilled', action);
-    //   state.isValid = true;
-    //   state.isLoading = false;
-    // });
-
     builder.addCase(signUp.rejected, (state, action) => {
-      console.log('auth/signUp.rejected', action);
       state.error = action.payload as Error | null;
       state.isLoading = false;
     });
@@ -175,27 +168,13 @@ const slice = createSlice({
       state.isLoading = true;
     });
 
-    // builder.addCase(signIn.fulfilled, (state, action) => {
-    //   console.log('auth/signIn.fulfilled', action);
-    //   state.isValid = true;
-    //   state.isLoading = false;
-    // });
-
     builder.addCase(signIn.rejected, (state, action) => {
-      console.log('auth/signIn.rejected', action);
       state.error = action.payload as Error | null;
       state.isLoading = false;
     });
 
     // Sign Out
-    // builder.addCase(signOut.fulfilled, (state) => {
-    //   console.log('auth/signOut.fulfilled');
-    //   state.isValid = false;
-    //   state.user = null;
-    // });
-
     builder.addCase(signOut.rejected, (state, action) => {
-      console.log('auth/signOut.rejected', action);
       state.error = action.payload as Error | null;
       state.isLoading = false;
     });
@@ -213,8 +192,9 @@ const slice = createSlice({
     });
 
     builder.addCase(verifyAuth.rejected, (state, action) => {
-      console.log('auth/verifyAuth.rejected', action);
       state.error = action.payload as Error | null;
+      state.isValid = false;
+      state.isLoading = false;
     });
   }
 });
