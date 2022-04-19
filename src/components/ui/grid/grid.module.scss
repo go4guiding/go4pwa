@@ -1,19 +1,41 @@
 @use '../../../assets/stylesheets/variables' as *;
+@use '../../../assets/stylesheets/mixins' as *;
 
 .container {
   display: grid;
   gap: 0.5rem;
-  margin: 0 calc(var(--gutters) * -1);
-}
+  margin: 0 calc(var(--spacing) * -1);
 
-@for $i from 1 through $grid-columns {
-  .columns-#{$i} {
-    // grid-column: span #{$i};
-    grid-template-columns: repeat(#{$i}, 1fr);
+  > * {
+    margin: 0;
   }
 }
 
-.no-gutters {
+@for $i from 1 through $grid-columns {
+  .columns_#{$i} {
+    grid-template-columns: repeat(#{$i}, 1fr);
+  }
+
+  .colspan_#{$i} {
+    grid-column: span #{$i};
+  }
+}
+
+@each $bp, $val in $breakpoints-min {
+  @include breakpoint-up($bp) {
+    @for $i from 1 through $grid-columns {
+      .columns_#{$bp}_#{$i} {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      }
+
+      .colspan_#{$bp}_#{$i} {
+        grid-column: span #{$i};
+      }
+    }
+  }
+}
+
+.noGutters {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
