@@ -1,0 +1,98 @@
+@use 'sass:color';
+@use 'sass:list';
+
+@use './variables' as *;
+@use './functions' as *;
+@use './mixins' as *;
+
+// Spacings
+@for $count from 0 to 3 {
+  $value: calc(#{$count} * #{$spacing-multiplier}rem);
+
+  .m#{$count} {
+    margin: $value;
+  }
+
+  .mt#{$count} {
+    margin-top: $value;
+  }
+
+  .mb#{$count} {
+    margin-bottom: $value;
+  }
+
+  .ml#{$count} {
+    margin-left: $value;
+  }
+
+  .mr#{$count} {
+    margin-right: $value;
+  }
+
+  .mv#{$count} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+
+  .mh#{$count} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+
+  .p#{$count} {
+    padding: $value;
+  }
+
+  .pt#{$count} {
+    padding-top: $value;
+  }
+
+  .pb#{$count} {
+    padding-bottom: $value;
+  }
+
+  .pl#{$count} {
+    padding-left: $value;
+  }
+
+  .pr#{$count} {
+    padding-right: $value;
+  }
+
+  .pv#{$count} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+
+  .ph#{$count} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+}
+
+$blur: blur(0.25rem);
+
+// Colors
+@each $colour, $value in list.join($theme-colours, $award-theme-colours) {
+  $color-name: str-replace($colour, '-');
+
+  .text_#{$color-name} {
+    color: $value !important;
+  }
+
+  .fill_#{$color-name} {
+    fill: $value !important;
+  }
+
+  .bg_#{$color-name} {
+    background-color: $value !important;
+  }
+
+  // Glassmorphism
+  $bg-color: color.adjust($value, $alpha: -0.75);
+
+  .#{$color-name}_glass {
+    background-color: $bg-color !important;
+    backdrop-filter: $blur;
+  }
+}
