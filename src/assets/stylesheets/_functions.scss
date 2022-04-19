@@ -30,7 +30,7 @@
   @return 'data:image/svg+xml,' + $svg;
 }
 
-$threshold: 50;
+$threshold: 60;
 
 @function contrast-color($color, $cssVariable: true) {
   $contrast: var(--light);
