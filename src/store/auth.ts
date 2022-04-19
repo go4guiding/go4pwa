@@ -20,7 +20,6 @@ import { getDatabase, ref, onValue } from 'firebase/database';
 import {
   AuthState,
   SignInParams,
-  FirebaseUser,
   UserClaims,
   UserState,
   SignUpParams,
@@ -31,9 +30,10 @@ import { auth } from '../firebase';
 const EMAIL_SUFFIX = '@go4guides.co.uk';
 
 const initialState: AuthState = {
+  token: null,
   isValid: false,
-  user: null,
   isLoading: true,
+  user: null,
   error: null
 };
 
@@ -52,8 +52,13 @@ export const signIn = createAsyncThunk(
   async (params: SignInParams) => {
     const { username, password } = params;
     const emailAddress = `${username}${EMAIL_SUFFIX}`;
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      emailAddress,
+      password
+    );
 
-    return await signInWithEmailAndPassword(auth, emailAddress, password);
+    return userCredential;
   }
 );
 
@@ -69,10 +74,16 @@ export const verifyAuth = createAsyncThunk(
 
     const { claims } = await user.getIdTokenResult();
     const { unitId, patrolId, role } = claims as UserClaims;
-    const { displayName, email, uid, emailVerified, createdAt, lastLoginAt } =
-      user as FirebaseUser<User>;
+    const { displayName, email, uid, emailVerified, metadata } = user;
+    const { creationTime, lastSignInTime } = metadata;
 
-    return {
+    const createdAt = creationTime ? new Date(creationTime).valueOf() : null;
+    const lastSignedInAt = lastSignInTime
+      ? new Date(lastSignInTime).valueOf()
+      : null;
+
+    const token = await user.getIdToken();
+    const newUser = {
       uid,
       email,
       emailVerified,
@@ -81,7 +92,12 @@ export const verifyAuth = createAsyncThunk(
       patrolId,
       role,
       createdAt,
-      lastSignedInAt: lastLoginAt
+      lastSignedInAt
+    };
+
+    return {
+      token,
+      user: newUser
     };
   }
 );
@@ -137,63 +153,48 @@ const slice = createSlice({
   extraReducers: (builder) => {
     // Sign Up
     builder.addCase(signUp.pending, (state) => {
+      state.error = null;
       state.isLoading = true;
     });
 
-    builder.addCase(signUp.fulfilled, (state, action) => {
-      console.log('auth/signUp.fulfilled', action);
-      // state.user = action.payload;
-      state.isValid = true;
-      state.isLoading = false;
-    });
-
     builder.addCase(signUp.rejected, (state, action) => {
-      console.log('auth/signUp.rejected', action);
-      // state.error = action.payload;
+      state.error = action.payload as Error | null;
       state.isLoading = false;
     });
 
     // Sign In
     builder.addCase(signIn.pending, (state) => {
+      state.error = null;
       state.isLoading = true;
     });
 
-    builder.addCase(signIn.fulfilled, (state, action) => {
-      console.log('auth/signIn.fulfilled', action);
-      // state.user = action.payload;
-      state.isValid = true;
-      state.isLoading = false;
-    });
-
     builder.addCase(signIn.rejected, (state, action) => {
-      console.log('auth/signIn.rejected', action);
-      // state.error = action.payload;
+      state.error = action.payload as Error | null;
       state.isLoading = false;
     });
 
     // Sign Out
-    builder.addCase(signOut.fulfilled, (state) => {
-      console.log('auth/signOut.fulfilled');
-      state.isValid = false;
-      state.user = null;
-    });
-
     builder.addCase(signOut.rejected, (state, action) => {
-      console.log('auth/signOut.rejected', action);
-      // state.error = action.payload;
+      state.error = action.payload as Error | null;
+      state.isLoading = false;
     });
 
     // Verify Auth
     builder.addCase(verifyAuth.fulfilled, (state, action) => {
-      state.isValid = !!action.payload;
-      state.user = action.payload as UserState | null;
-      state.isLoading = false;
+      if (!action.payload) return;
+      const { token, user } = action.payload;
+
+      state.token = token;
+      state.isValid = !(!user || !token);
+      state.user = user as UserState | null;
+      state.isLoading = user && user.role === null;
       state.error = null;
     });
 
     builder.addCase(verifyAuth.rejected, (state, action) => {
-      console.log('auth/verifyAuth.rejected', action);
-      // state.error = action.payload;
+      state.error = action.payload as Error | null;
+      state.isValid = false;
+      state.isLoading = false;
     });
   }
 });

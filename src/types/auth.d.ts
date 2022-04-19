@@ -2,10 +2,6 @@
 
 // AUTHENTICATION
 export declare type Role = 'member' | 'leader' | 'admin' | null;
-export declare type FirebaseUser<T> = T & {
-  createdAt: string;
-  lastLoginAt: string;
-};
 
 export declare type UserClaims = {
   unitId: string | null;
@@ -41,11 +37,12 @@ export declare type UserState = {
   unitId?: string;
   patrolId?: string;
   role: Role;
-  createdAt: string;
-  lastSignedInAt: string;
+  createdAt: number;
+  lastSignedInAt: number;
 } | null;
 
 export declare type AuthState = {
+  token: string | null;
   isValid: boolean;
   isLoading: boolean;
   user: UserState;
