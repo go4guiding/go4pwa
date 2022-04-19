@@ -96,3 +96,30 @@ $blur: blur(0.25rem);
     backdrop-filter: $blur;
   }
 }
+
+// Misc
+.spacer {
+  flex: 1;
+}
+
+.container,
+.fluid_container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing); //0.625rem; // 0 10px
+
+  &:not(.fluid_container) {
+    @include breakpoint-up(sm) {
+      max-width: 90%;
+    }
+
+    @include breakpoint-up(md) {
+      max-width: 75%;
+    }
+
+    // @include breakpoint-up(lg) {
+    //   max-width: 53.125rem; // 800px;
+    // }
+  }
+}
