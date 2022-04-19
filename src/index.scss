@@ -66,7 +66,7 @@
   --skills-for-my-future-20: #{$skills-for-my-future-20};
 
   // Misc
-  --gutters: #{$gutter-base};
+  --spacing: #{$spacing-base};
   --border-radius: #{$border-radius};
   --border-radius-sm: #{$border-radius-sm};
   --grid-columns: #{$grid-columns};
@@ -89,7 +89,7 @@ body {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 0.625rem; // 0 10px
+  padding: 0 var(--spacing); //0.625rem; // 0 10px
 
   &:not(.container-fluid) {
     @include breakpoint-up(sm) {
