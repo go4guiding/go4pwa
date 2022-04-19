@@ -1,9 +1,9 @@
 import { createContext, PropsWithChildren, useEffect, useState } from 'react';
 
 import { HTMLDivProps } from 'types/html';
-import { AwardThemeColour, ThemeColour } from 'types/app';
+import { AwardThemeColour, Storybookable, ThemeColour } from 'types/app';
 
-// import notImplemented from 'utilities/notImplemented';
+import notImplemented from 'utilities/notImplemented';
 import { buildClassName } from 'utilities/string';
 import styles from './accordion.module.scss';
 
@@ -26,12 +26,12 @@ export type AccordionState = {
 
 const initialState: AccordionState = {
   expandedItems: [],
-  onItemChange: () => {} //notImplemented('onItemChange')
+  onItemChange: notImplemented('onItemChange')
 };
 
 export const Context = createContext(initialState);
 
-function Accordion(props: AccordionProps) {
+function Accordion(props: AccordionProps & Storybookable) {
   const {
     children,
     className,
@@ -39,6 +39,7 @@ function Accordion(props: AccordionProps) {
     noAllCollapsed,
     color,
     expandedItems: initialExpandedItems = [],
+    story = false,
     onItemsChanged,
     ...otherProps
   } = props;
@@ -56,14 +57,16 @@ function Accordion(props: AccordionProps) {
     else newExpandedItems.splice(indexOf, 1);
 
     if (noAllCollapsed && !newExpandedItems.length)
-      newExpandedItems.push(...initialExpandedItems);
+      newExpandedItems.push(
+        ...(initialExpandedItems.length > 0 ? initialExpandedItems : [itemId])
+      );
 
     setExpandedItems(newExpandedItems);
   };
 
   useEffect(
     () => setExpandedItems(initialExpandedItems),
-    [initialExpandedItems, setExpandedItems]
+    !story ? [initialExpandedItems, setExpandedItems] : []
   );
 
   useEffect(() => {
