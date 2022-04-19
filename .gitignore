@@ -13,6 +13,8 @@
 
 #
 /.firebase
+/src/stories/*.tsx
+/src/stories/*.css
 
 # misc
 .DS_Store
