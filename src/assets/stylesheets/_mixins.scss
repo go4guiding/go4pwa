@@ -1,5 +1,11 @@
 @use 'sass:map';
+@use 'sass:color';
+
 @use './variables' as *;
+@use './functions' as *;
+
+$hover-lightness: -10%;
+$focus-lightness: 25%;
 
 // Buttons
 @mixin button-states($color) {
