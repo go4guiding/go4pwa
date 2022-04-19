@@ -1,0 +1,74 @@
+@use 'sass:map';
+@use './variables' as *;
+
+// Buttons
+@mixin button-states($color) {
+  &:not(:disabled) {
+    color: contrast-color($color);
+    background-color: $color;
+  }
+
+  &:not(:disabled):hover {
+    $btn-color: color.adjust($color, $lightness: $hover-lightness);
+    color: contrast-color($btn-color);
+    background-color: $btn-color;
+  }
+
+  &:focus-visible,
+  &:focus {
+    outline: 0.3125rem solid color.adjust($color, $lightness: $focus-lightness);
+  }
+}
+
+// Breakpoints
+@mixin breakpoint-up($breakpoint, $orientation: null) {
+  $min-width: map.get($breakpoints-min, $breakpoint);
+
+  @if ($orientation) {
+    @media (min-width: #{$min-width}) and (orientation: #{$orientation}) {
+      @content;
+    }
+  } @else {
+    @media (min-width: #{$min-width}) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-down($breakpoint, $orientation: null) {
+  $max-width: map.get($breakpoints-max, $breakpoint);
+
+  @if ($orientation) {
+    @media (max-width: #{$max-width}) and (orientation: #{$orientation}) {
+      @content;
+    }
+  } @else {
+    @media (max-width: #{$max-width}) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-between(
+  $breakpoint-min,
+  $breakpoint-max,
+  $orientation: null
+) {
+  $min-width: map.get($breakpoints-min, $breakpoint-min);
+  $max-width: map.get($breakpoints-max, $breakpoint-max);
+
+  @if ($orientation) {
+    @media (min-width: #{$min-width}) and (max-width: #{$max-width}) and (orientation: #{$orientation}) {
+      @content;
+    }
+  } @else {
+    @media (min-width: #{$min-width}) and (max-width: #{$max-width}) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-only($breakpoint, $orientation: null) {
+  @include breakpoint-between($breakpoint, $breakpoint, $orientation);
+}
+// ---
