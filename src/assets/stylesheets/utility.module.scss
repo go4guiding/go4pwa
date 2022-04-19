@@ -103,13 +103,13 @@ $blur: blur(0.25rem);
 }
 
 .container,
-.fluid_container {
+.container_fluid {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 var(--spacing); //0.625rem; // 0 10px
 
-  &:not(.fluid_container) {
+  &:not(.container_fluid) {
     @include breakpoint-up(sm) {
       max-width: 90%;
     }
