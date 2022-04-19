@@ -8,6 +8,10 @@ $primary: #c40063;
 $primary-70: #d64c91;
 $primary-20: #f3cce0;
 
+$accent: #ef3f30;
+$accent-70: #f47a6e;
+$accent-20: #fcd9d6;
+
 $secondary: #ef3f30;
 $secondary-70: #f47a6e;
 $secondary-20: #fcd9d6;
@@ -104,13 +108,13 @@ $theme-colours: (
   'primary': $primary,
   'primary-70': $primary-70,
   'primary-20': $primary-20,
-  'secondary': $secondary,
-  'secondary-70': $secondary-70,
-  'secondary-20': $secondary-20,
+  'accent': $accent,
+  'accent-70': $accent-70,
+  'accent-20': $accent-20,
+  'secondary': $grey,
+  'secondary-50': $grey-50,
   'dark': $black,
   'light': $white,
-  'grey': $grey,
-  'grey-50': $grey-50,
   'danger': $danger,
   'danger-light': $danger-light,
   'danger-dark': $danger-dark,
