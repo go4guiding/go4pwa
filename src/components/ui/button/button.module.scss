@@ -31,15 +31,26 @@
   }
 }
 
-.default {
+.secondary {
   @include button-states($grey);
 }
 
 @each $colour, $value in $theme-colours {
   .#{$colour} {
-    @extend .default;
     @include button-states($value);
   }
+}
+
+.small {
+  padding: 0.4rem 0.8rem;
+  font-size: calc(var(--font-size) * 0.8);
+  line-height: 1.2;
+}
+
+.large {
+  padding: 0.6rem 1.2rem;
+  font-size: calc(var(--font-size) * 1.2);
+  line-height: 1.4;
 }
 
 .block {

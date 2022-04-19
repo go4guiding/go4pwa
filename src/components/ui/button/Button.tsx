@@ -11,9 +11,12 @@ import styles from './button.module.scss';
 
 type ButtonMouseEvent = ReactMouseEvent<HTMLButtonElement, MouseEvent>;
 
-type ButtonProps = HTMLButtonProps &
+type ButtonColors = 'primary' | 'accent' | 'secondary' | 'light' | 'dark';
+
+export type ButtonProps = HTMLButtonProps &
   PropsWithChildren<{
-    color?: ThemeColour | 'none';
+    color?: ButtonColors | 'none';
+    size?: 'small' | 'large';
     block?: boolean;
   }>;
 
@@ -21,7 +24,8 @@ function Button(props: ButtonProps) {
   const {
     children,
     className,
-    color = 'default',
+    color = 'none',
+    size,
     block = false,
     disabled,
     onMouseUp,
@@ -33,6 +37,7 @@ function Button(props: ButtonProps) {
   const newClassName = buildClassName(
     styles.base,
     color !== 'none' ? styles[color] : null,
+    size ? styles[size] : null,
     block ? styles.block : null,
     className
   );
