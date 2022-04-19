@@ -10,7 +10,7 @@ export default {
   argTypes: {
     color: {
       control: 'select',
-      options: ['none', 'primary', 'accent', 'secondary', 'light', 'dark']
+      options: ['none', 'primary', 'accent', 'secondary', 'dark']
     },
     size: {
       control: 'select',

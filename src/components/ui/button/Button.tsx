@@ -4,14 +4,13 @@ import {
   MouseEvent as ReactMouseEvent
 } from 'react';
 
-import { ThemeColour } from 'types/app';
 import { HTMLButtonProps } from 'types/html';
 import { buildClassName } from 'utilities/string';
 import styles from './button.module.scss';
 
 type ButtonMouseEvent = ReactMouseEvent<HTMLButtonElement, MouseEvent>;
 
-type ButtonColors = 'primary' | 'accent' | 'secondary' | 'light' | 'dark';
+type ButtonColors = 'primary' | 'accent' | 'secondary' | 'dark';
 
 export type ButtonProps = HTMLButtonProps &
   PropsWithChildren<{
