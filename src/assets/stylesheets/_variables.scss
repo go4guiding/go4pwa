@@ -8,16 +8,16 @@ $primary: #c40063;
 $primary-70: #d64c91;
 $primary-20: #f3cce0;
 
-$accent: #ef3f30;
-$accent-70: #f47a6e;
-$accent-20: #fcd9d6;
+$accent: #4e88c7;
+$accent-70: #4c9cd0;
+$accent-20: #cce3f2;
 
-$secondary: #ef3f30;
-$secondary-70: #f47a6e;
-$secondary-20: #fcd9d6;
+// $secondary: #ef3f30;
+// $secondary-70: #f47a6e;
+// $secondary-20: #fcd9d6;
 
-$grey: #a7a9ac;
-$grey-50: #d3d4d5;
+$secondary: #a7a9ac;
+$secondary-50: #d3d4d5;
 
 // Award Theme Colkours
 $know-myself: #01aeef;
@@ -111,8 +111,8 @@ $theme-colours: (
   'accent': $accent,
   'accent-70': $accent-70,
   'accent-20': $accent-20,
-  'secondary': $grey,
-  'secondary-50': $grey-50,
+  'secondary': $secondary,
+  'secondary-50': $secondary-50,
   'dark': $black,
   'light': $white,
   'danger': $danger,
