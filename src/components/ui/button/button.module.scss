@@ -1,20 +1,17 @@
-@use 'sass:color';
-
 @use '../../../assets/stylesheets/variables' as *;
 @use '../../../assets/stylesheets/functions' as *;
 @use '../../../assets/stylesheets/mixins' as *;
 
-$hover-lightness: -10%;
-$focus-lightness: 40%;
-
-.default {
+.base {
   appearance: none;
   display: inline-block;
   width: auto;
 
   padding: 0.5rem 1rem;
-  border: 1px solid transparent;
-  border-radius: var(--border-radius-sm);
+  margin: 0.125rem;
+
+  border: 1px solid transparent !important;
+  border-radius: var(--border-radius);
 
   font-size: var(--font-size);
   font-weight: 400;
@@ -22,15 +19,19 @@ $focus-lightness: 40%;
   line-height: 1.375;
   text-align: center;
   text-decoration: none;
-
   vertical-align: middle;
-  cursor: pointer;
 
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
   user-select: none;
 
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+}
+
+.default {
   @include button-states($grey);
 }
 

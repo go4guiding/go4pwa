@@ -13,7 +13,7 @@ type ButtonMouseEvent = ReactMouseEvent<HTMLButtonElement, MouseEvent>;
 
 type ButtonProps = HTMLButtonProps &
   PropsWithChildren<{
-    color?: ThemeColour;
+    color?: ThemeColour | 'none';
     block?: boolean;
   }>;
 
@@ -30,9 +30,12 @@ function Button(props: ButtonProps) {
   } = props;
 
   const [isPressed, setIsPressed] = useState(false);
-
-  const blockClass = block ? styles.block : null;
-  const newClassName = buildClassName(styles[color], blockClass, className);
+  const newClassName = buildClassName(
+    styles.base,
+    color !== 'none' ? styles[color] : null,
+    block ? styles.block : null,
+    className
+  );
 
   const mouseUpHandler = (event: ButtonMouseEvent) => {
     if (typeof onMouseUp === 'function') onMouseUp(event);
