@@ -32,7 +32,7 @@
 }
 
 .secondary {
-  @include button-states($grey);
+  @include button-states($secondary);
 }
 
 @each $colour, $value in $theme-colours {
