@@ -1,4 +1,10 @@
-import { createContext, PropsWithChildren, useEffect, useState } from 'react';
+import {
+  createContext,
+  PropsWithChildren,
+  useCallback,
+  useEffect,
+  useState
+} from 'react';
 
 import { HTMLDivProps } from 'types/html';
 import { AwardThemeColour, Storybookable, ThemeColour } from 'types/app';
@@ -11,17 +17,17 @@ export const accordionStyles = styles;
 
 export type AccordionProps = HTMLDivProps &
   PropsWithChildren<{
-    expandedItems?: string[];
+    expandedItems?: number[];
     multiple?: boolean;
-    noAllCollapsed?: boolean;
+    noCollapseAll?: boolean;
     color?: ThemeColour | AwardThemeColour;
-    onItemsChanged?: (expandedItems: string[]) => void;
+    onItemsChanged?: (expandedItems: number[]) => void;
   }>;
 
 export type AccordionState = {
   color?: ThemeColour | AwardThemeColour;
-  expandedItems: string[];
-  onItemChange: (id: string) => void;
+  expandedItems: number[];
+  onItemChange: (index: number) => void;
 };
 
 const initialState: AccordionState = {
@@ -36,7 +42,7 @@ function Accordion(props: AccordionProps & Storybookable) {
     children,
     className,
     multiple,
-    noAllCollapsed,
+    noCollapseAll,
     color,
     expandedItems: initialExpandedItems = [],
     story = false,
@@ -44,29 +50,43 @@ function Accordion(props: AccordionProps & Storybookable) {
     ...otherProps
   } = props;
 
-  const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const [expandedItems, setExpandedItems] = useState<number[]>([]);
   const newClassName = buildClassName(styles.base, className);
 
-  const onItemChange = (itemId: string) => {
+  const updateExpandedItems = useCallback(
+    (items: number[]) => {
+      const newExpandedItems = !multiple
+        ? items.filter((_, i) => i === 0)
+        : items;
+
+      if (noCollapseAll && newExpandedItems.length === 0)
+        newExpandedItems.push(0);
+
+      setExpandedItems(newExpandedItems);
+    },
+    [noCollapseAll, multiple, setExpandedItems]
+  );
+
+  const onItemChange = (index: number) => {
     const newExpandedItems = multiple
       ? [...expandedItems]
-      : expandedItems.filter((id) => id === itemId);
-    const indexOf = newExpandedItems.indexOf(itemId);
+      : expandedItems.filter((value) => value === index);
+    const indexOf = newExpandedItems.indexOf(index);
 
-    if (indexOf === -1) newExpandedItems.push(itemId);
+    if (indexOf === -1) newExpandedItems.push(index);
     else newExpandedItems.splice(indexOf, 1);
 
-    if (noAllCollapsed && !newExpandedItems.length)
-      newExpandedItems.push(
-        ...(initialExpandedItems.length > 0 ? initialExpandedItems : [itemId])
-      );
+    if (noCollapseAll && newExpandedItems.length === 0) {
+      updateExpandedItems(initialExpandedItems);
+      return;
+    }
 
     setExpandedItems(newExpandedItems);
   };
 
   useEffect(
-    () => setExpandedItems(initialExpandedItems),
-    !story ? [initialExpandedItems, setExpandedItems] : []
+    () => updateExpandedItems(initialExpandedItems),
+    [updateExpandedItems]
   );
 
   useEffect(() => {
