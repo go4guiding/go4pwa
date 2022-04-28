@@ -1,41 +1,42 @@
-import { PropsWithChildren, useContext, useMemo } from 'react';
+import { PropsWithChildren, useMemo } from 'react';
 
+import { AwardThemeColour, ThemeColour } from 'types/app';
 import { HTMLButtonProps, HTMLDivProps } from 'types/html';
 import { buildClassName, randomString } from 'utilities/string';
 import Button from 'components/ui/button';
 import Collapse from 'components/ui/collapse';
 
-import { Context as AccordionContext } from './Accordion';
 import styles from './accordion.module.scss';
 
 export type AccordionItemProps = HTMLDivProps &
   PropsWithChildren<{
     label: string;
+    expanded?: boolean;
+    color?: ThemeColour | AwardThemeColour;
     toggleProps?: HTMLButtonProps;
+    onToggled?: (expanded: boolean) => void;
   }>;
 
 function AccordionItem(props: AccordionItemProps) {
-  const { color, expandedItems, onItemChange } = useContext(AccordionContext);
   const {
     children,
     className,
     id,
     label,
+    expanded = false,
+    color,
     toggleProps = {},
+    onToggled,
     ...otherProps
   } = props;
 
   const { className: toggleClassName, ...otherToggleProps } = toggleProps;
   const randomId = useMemo(() => randomString(), []);
-  const itemId = useMemo(
-    () => id || `accordion_item_${randomId}`,
-    [id, randomId]
-  );
+  const itemId = useMemo(() => id || randomId, [id, randomId]);
 
   const buttonId = `${itemId}_button`;
   const collapseId = `${itemId}_content`;
 
-  const expanded = expandedItems.includes(itemId);
   const ariaLabel = `${expanded ? 'Hide' : 'Show'} ${label} content`;
   const newClassName = buildClassName(
     expanded ? styles.item_expanded : styles.item,
@@ -57,7 +58,7 @@ function AccordionItem(props: AccordionItemProps) {
         aria-label={ariaLabel}
         aria-controls={collapseId}
         className={newToggleClassName}
-        onClick={() => onItemChange(itemId)}
+        onClick={() => onToggled?.(expanded)}
       >
         <span>{label}</span>
       </Button>
