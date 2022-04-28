@@ -484,7 +484,8 @@
       { "name": "Cosmic calculations", "duration": 15 },
       { "name": "Solar simulation", "duration": 20 },
       { "name": "Capture the Sun", "duration": 60 },
-      { "name": "Penny Hike", "duration": 60 }
+      { "name": "Penny Hike", "duration": 60 },
+      { "name": "Snowballs and shields", "duration": 0 }
     ]
   },
   {
@@ -726,7 +727,8 @@
       { "name": "Information overload", "duration": 20 },
       { "name": "Instruction disruption", "duration": 30 },
       { "name": "Can’t believe it’s butter", "duration": 45 },
-      { "name": "Rainbow Challenge", "duration": 60 }
+      { "name": "Rainbow Challenge", "duration": 60 },
+      { "name": "Chattermatter", "duration": 60 }
     ]
   }
 ]
