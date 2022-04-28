@@ -70,7 +70,7 @@ $svg-size: 2rem; //1.25rem;
 // }
 
 @each $colour, $value in list.join($theme-colours, $award-theme-colours) {
-  $contrast-color: contrast-color($value);
+  $contrast-color: contrast-color($value, false);
 
   .#{$colour} {
     color: $contrast-color;
