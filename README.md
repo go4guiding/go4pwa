@@ -1,2 +1,2 @@
-# go4guides
+# go4pwa
 Guiding journey tracker
