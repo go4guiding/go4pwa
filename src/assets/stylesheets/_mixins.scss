@@ -5,7 +5,7 @@
 @use './functions' as *;
 
 $hover-lightness: -10%;
-$focus-lightness: 25%;
+$focus-lightness: 50%;
 
 // Buttons
 @mixin button-states($color) {
@@ -22,7 +22,12 @@ $focus-lightness: 25%;
 
   &:focus-visible,
   &:focus {
-    outline: 0.3125rem solid color.adjust($color, $lightness: $focus-lightness);
+    $outline-color: color.adjust($color, $lightness: $focus-lightness);
+    @if (color.lightness($outline-color) > 90%) {
+      $outline-color: color.adjust($color, $lightness: 20%);
+    }
+
+    outline: 0.3125rem solid $outline-color;
   }
 }
 
@@ -75,6 +80,8 @@ $focus-lightness: 25%;
 }
 
 @mixin breakpoint-only($breakpoint, $orientation: null) {
-  @include breakpoint-between($breakpoint, $breakpoint, $orientation);
+  @include breakpoint-between($breakpoint, $breakpoint, $orientation) {
+    @content;
+  }
 }
 // ---

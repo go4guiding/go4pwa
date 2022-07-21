@@ -15,32 +15,29 @@ export default {
 
 // More on accordion templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Accordion> = (args) => (
-  <Accordion {...args} story>
+  <Accordion {...args}>
     <Context.Consumer>
       {({ expandedItems, onItemChange }) =>
-        [
-          'Accordion Item 1',
-          'Accordion Item 2',
-          'Accordion Item 3',
-          'Accordion Item 4'
-        ].map((item, i) => (
-          <AccordionItem
-            key={btoa(item + i)}
-            label={item}
-            expanded={expandedItems.includes(i)}
-            onToggled={() => onItemChange(i)}
-          >
-            <p className={utilStyles.p2}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </AccordionItem>
-        ))
+        ['Accordion Item 1', 'Accordion Item 2', 'Accordion Item 3'].map(
+          (item, i) => (
+            <AccordionItem
+              key={btoa(item + i)}
+              label={item}
+              expanded={expandedItems.includes(i)}
+              onToggled={() => onItemChange(i)}
+            >
+              <p className={utilStyles.p2}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </AccordionItem>
+          )
+        )
       }
     </Context.Consumer>
   </Accordion>
@@ -64,8 +61,7 @@ export const Controller = Template.bind({
   multiple: { type: 'boolean' },
   noCollapseAll: { type: 'boolean' },
   expandedItems: { control: { type: 'array' } },
-  onItemsChanged: { table: { disable: true } },
-  story: { table: { disable: true } }
+  onItemsChanged: { table: { disable: true } }
 });
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Controller.args = {
@@ -98,7 +94,7 @@ export const Item = ItemTemplate.bind({
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Item.args = {
-  label: 'Accordion Item 1',
+  label: 'Accordion Item',
   expanded: false
   // color: 'primary'
 };

@@ -1,11 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Button, { ButtonProps } from './Button';
+import Component, { ButtonProps } from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'UI/Button',
-  component: Button,
+  title: 'UI',
+  component: Component,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     color: {
@@ -17,15 +17,15 @@ export default {
       options: ['normal', 'small', 'large']
     }
   }
-} as ComponentMeta<typeof Button>;
+} as ComponentMeta<typeof Component>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
-  <Button {...args}>
+const Template: ComponentStory<typeof Component> = (args: ButtonProps) => (
+  <Component {...args}>
     <span>Button</span>
-  </Button>
+  </Component>
 );
 
-export const Base = Template.bind({});
+export const Button = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Base.args = { color: 'none' };
+Button.args = { color: 'none', block: false };

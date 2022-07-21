@@ -3,16 +3,21 @@ import useEventListener from 'hooks/useEventListener';
 
 function useMediaQuery(mediaQuery: string) {
   const [isMatch, setIsMatch] = useState(false);
-  const [mediaQueryList, setMediaQueryList] = useState<MediaQueryList | null>(null);
+  const [mediaQueryList, setMediaQueryList] =
+    useState<MediaQueryList | null>(null);
 
   useEffect(() => {
     const list = window.matchMedia(mediaQuery);
+
     setMediaQueryList(list);
     setIsMatch(list.matches);
-  }, [mediaQuery]);
+  }, [mediaQuery, setIsMatch, setMediaQueryList]);
 
-  // TODO: Replace evnt type any with MediaQueryChangeEvent (requires TS types)
-  useEventListener('change', (e: any) => setIsMatch(e.matches), mediaQueryList);
+  useEventListener(
+    'change',
+    (event) => setIsMatch(event.matches),
+    mediaQueryList
+  );
 
   return isMatch;
 }
