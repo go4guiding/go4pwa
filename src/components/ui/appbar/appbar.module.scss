@@ -1,3 +1,5 @@
+@use 'sass:list';
+
 @use '../../../assets/stylesheets/variables' as *;
 @use '../../../assets/stylesheets/functions' as *;
 
@@ -8,11 +10,12 @@ $positions: ('absolute' 'fixed' 'relative' 'static' 'sticky');
   position: relative;
   margin-bottom: 1rem;
 
-  background-color: var(--light);
+  background-color: var(--secondary);
   color: var(--dark);
+  padding: 0.5rem 0;
 }
 
-@each $colour, $value in $award-theme-colours {
+@each $colour, $value in list.join($theme-colours, $award-theme-colours) {
   .#{$colour} {
     @extend .default;
     color: contrast-color($value);
@@ -28,7 +31,10 @@ $positions: ('absolute' 'fixed' 'relative' 'static' 'sticky');
 
 .bottom {
   position: fixed !important;
+  top: auto;
   bottom: 0;
   left: 0;
   right: 0;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }

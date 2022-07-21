@@ -9,7 +9,7 @@ import styles from './appbar.module.scss';
 export type AppbarProps = HTMLElementProps &
   PropsWithChildren<{
     position?: 'absolute' | 'fixed' | 'static' | 'sticky' | 'relative';
-    color?: AwardThemeColour;
+    color?: AwardThemeColour | 'default';
     bottom?: boolean;
   }>;
 
@@ -18,7 +18,7 @@ function Appbar(props: AppbarProps) {
   const Tag = bottom ? 'footer' : 'header';
 
   const bottomClassName = bottom ? styles.bottom : null;
-  const positionClassName = position ? styles[position] : null;
+  const positionClassName = !bottom && position ? styles[position] : null;
   const colorClassName = color ? styles[color] : styles.default;
   const newClassName = buildClassName(
     positionClassName,
@@ -34,7 +34,7 @@ function Appbar(props: AppbarProps) {
   );
 }
 
-export const AppbarWithToolbar = (props: AppbarProps & ToolbarProps) => {
+function AppbarWithToolbar(props: AppbarProps & ToolbarProps) {
   const { children, fluid, align, ...otherProps } = props;
 
   return (
@@ -44,6 +44,6 @@ export const AppbarWithToolbar = (props: AppbarProps & ToolbarProps) => {
       </Toolbar>
     </Appbar>
   );
-};
+}
 
-export default Appbar;
+export default AppbarWithToolbar;

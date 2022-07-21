@@ -13,11 +13,12 @@ export type ToolbarProps = HTMLDivProps &
 function Toolbar(props: ToolbarProps) {
   const { children, className, fluid, align, ...otherProps } = props;
 
-  const fluidClassName = fluid ? styles.fluid : styles.base;
   const alignClassName = align ? styles[align] : null;
+  const containerClassName = fluid ? 'container-fluid' : 'container';
   const newClassName = buildClassName(
-    fluidClassName,
+    styles.base,
     alignClassName,
+    containerClassName,
     className
   );
 

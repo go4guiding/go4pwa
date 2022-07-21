@@ -5,14 +5,8 @@ $alignments: (
 );
 
 .base {
-  @extend .container;
   display: flex;
   align-items: center;
-}
-
-.fluid {
-  @extend .base;
-  @extend .container-fluid;
 }
 
 @each $align, $value in $alignments {
