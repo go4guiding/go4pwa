@@ -20,19 +20,20 @@ import { getDatabase, ref, onValue } from 'firebase/database';
 import {
   AuthState,
   SignInParams,
-  FirebaseUser,
   UserClaims,
   UserState,
   SignUpParams,
-  SignUpTokenResult
+  SignUpTokenResult,
+  FirebaseUser
 } from 'types/auth';
-import { auth } from '../firebase';
+import { auth } from 'services/firebase';
 
-const EMAIL_SUFFIX = '@go4guides.co.uk';
+const EMAIL_SUFFIX = process.env.REACT_APP_EMAIL_SUFFIX;
 
 const initialState: AuthState = {
-  isValid: false,
+  token: null,
   user: null,
+  isValid: false,
   isLoading: true,
   error: null
 };
@@ -72,7 +73,7 @@ export const verifyAuth = createAsyncThunk(
     const { displayName, email, uid, emailVerified, createdAt, lastLoginAt } =
       user as FirebaseUser<User>;
 
-    return {
+    const newUser = {
       uid,
       email,
       emailVerified,
@@ -83,6 +84,11 @@ export const verifyAuth = createAsyncThunk(
       createdAt,
       lastSignedInAt: lastLoginAt
     };
+
+    return {
+      token: await user.getIdToken(),
+      user: newUser
+    };
   }
 );
 
@@ -90,7 +96,7 @@ export const verifyAuth = createAsyncThunk(
 export async function getSignUpTokenResult(
   token: string,
   onlyOnce: boolean = true
-): Promise<SignUpTokenResult> {
+): Promise<SignUpTokenResult | null> {
   const data = await new Promise<SignUpTokenResult>((resolve) =>
     onValue(
       ref(getDatabase(), `signUpTokens/${token}`),
@@ -151,24 +157,20 @@ const slice = createSlice({
       console.log('auth/signUp.rejected', action);
       // state.error = action.payload;
       state.isLoading = false;
+      state.isValid = false;
     });
 
     // Sign In
     builder.addCase(signIn.pending, (state) => {
       state.isLoading = true;
-    });
-
-    builder.addCase(signIn.fulfilled, (state, action) => {
-      console.log('auth/signIn.fulfilled', action);
-      // state.user = action.payload;
-      state.isValid = true;
-      state.isLoading = false;
+      state.error = null;
     });
 
     builder.addCase(signIn.rejected, (state, action) => {
       console.log('auth/signIn.rejected', action);
-      // state.error = action.payload;
+      state.error = action.error;
       state.isLoading = false;
+      state.isValid = false;
     });
 
     // Sign Out
@@ -176,24 +178,33 @@ const slice = createSlice({
       console.log('auth/signOut.fulfilled');
       state.isValid = false;
       state.user = null;
+      state.token = null;
     });
 
     builder.addCase(signOut.rejected, (state, action) => {
       console.log('auth/signOut.rejected', action);
-      // state.error = action.payload;
+      // state.error = action.payload.error;
+      state.isValid = false;
     });
 
     // Verify Auth
     builder.addCase(verifyAuth.fulfilled, (state, action) => {
-      state.isValid = !!action.payload;
-      state.user = action.payload as UserState | null;
-      state.isLoading = false;
-      state.error = null;
+      console.log('auth/verifyAuth.fulfilled', action);
+      state.isValid = action.payload !== null;
+
+      if (action.payload !== null) {
+        state.token = action.payload.token;
+        state.user = action.payload.user as UserState | null;
+        state.isLoading = false;
+        state.error = null;
+      }
     });
 
     builder.addCase(verifyAuth.rejected, (state, action) => {
       console.log('auth/verifyAuth.rejected', action);
-      // state.error = action.payload;
+      // state.error = action.payload.error;
+      state.isValid = false;
+      state.isLoading = false;
     });
   }
 });
