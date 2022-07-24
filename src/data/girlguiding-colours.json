@@ -1,0 +1,156 @@
+{
+  "girlguiding": {
+    "primary": {
+      "blue": {
+        "DEFAULT": "#4E88C7",
+        "70": "#4C9CD0",
+        "20": "#CCE3F2"
+      },
+      "pink": {
+        "DEFAULT": "#C40063",
+        "70": "#D64C91",
+        "20": "#F3CCE0"
+      },
+      "white": "#ffffff",
+      "black": "#343434"
+    },
+    "secondary": {
+      "blue": {
+        "DEFAULT": "#0072BC",
+        "70": "#4C9CD0",
+        "20": "#CCE3F2"
+      },
+      "red": {
+        "DEFAULT": "#EF3F30",
+        "70": "#F47A6E",
+        "20": "#FCD9D6"
+      },
+      "teal": {
+        "DEFAULT": "#009DAD",
+        "70": "#4CBAC5",
+        "20": "#CCEBEF"
+      },
+      "purple": {
+        "DEFAULT": "#8B52A1",
+        "70": "#AE86BD",
+        "20": "#E8DCEC"
+      },
+      "orange": {
+        "DEFAULT": "#F78E1E",
+        "70": "#F9B061",
+        "20": "#FDE8D2"
+      },
+      "green": {
+        "DEFAULT": "#72BF44",
+        "70": "#9CD27C",
+        "20": "#E3F2DA"
+      },
+      "yellow": {
+        "DEFAULT": "#FFD400",
+        "50": "#FFE97F"
+      },
+      "gray": {
+        "DEFAULT": "#A7A9AC",
+        "50": "#D3D4D5"
+      }
+    }
+  },
+  "rainbow": {
+    "primary": {
+      "blue": {
+        "DEFAULT": "#ABE1FA",
+        "50": "#D5F0FC"
+      },
+      "red": {
+        "DEFAULT": "#EF3F30",
+        "70": "#E07A6E",
+        "20": "#FCD9D6"
+      }
+    },
+    "secondary": {
+      "yellow": {
+        "DEFAULT": "#FFDD00",
+        "50": "#FFEE7F"
+      },
+      "blue": {
+        "DEFAULT": "#00AEEF",
+        "70": "#4CC6F4",
+        "20": "#CCEFFC"
+      }
+    }
+  },
+  "brownie": {
+    "primary": {
+      "yellow": {
+        "DEFAULT": "#FFD400",
+        "50": "#FFE97F"
+      },
+      "brown": {
+        "DEFAULT": "#7C5C23",
+        "70": "#A38D65",
+        "20": "#E5DED3"
+      }
+    },
+    "secondary": {
+      "blue": {
+        "DEFAULT": "#BDD4E8",
+        "50": "#DEE9F3"
+      },
+      "pink": {
+        "DEFAULT": "#F6ADCD",
+        "50": "#FAD6A6"
+      }
+    }
+  },
+  "guide": {
+    "primary": {
+      "blue": {
+        "DEFAULT": "#0072BC",
+        "70": "#4C9CD0",
+        "20": "#CCE3F2"
+      },
+      "red": {
+        "DEFAULT": "#ED1C24",
+        "70": "#F26065",
+        "20": "#FBD2D3"
+      }
+    },
+    "secondary": {
+      "purple": {
+        "DEFAULT": "#8B52A1",
+        "70": "#AE86BD",
+        "20": "#E8DCEC"
+      },
+      "green": {
+        "DEFAULT": "#72BF44",
+        "70": "#9CD27C",
+        "20": "#E3F2DA"
+      }
+    }
+  },
+  "ranger": {
+    "primary": {
+      "teal": {
+        "DEFAULT": "#009DAD",
+        "70": "#4CBAC5",
+        "20": "#CCEBEF"
+      },
+      "gray": {
+        "DEFAULT": "#A7A9AC",
+        "50": "#D3D4D5"
+      }
+    },
+    "secondary": {
+      "orange": {
+        "DEFAULT": "#F78E1E",
+        "70": "#F9B061",
+        "20": "#FDE8D2"
+      },
+      "blue": {
+        "DEFAULT": "#0072A0",
+        "70": "#7FB8CF",
+        "20": "#CCE3EC"
+      }
+    }
+  }
+}

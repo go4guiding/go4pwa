@@ -1,0 +1,35 @@
+{
+  "know-myself": {
+    "DEFAULT": "#01AEEF",
+    "70": "#57C3E8",
+    "20": "#C6EAFA"
+  },
+  "express-myself": {
+    "DEFAULT": "#ED028C",
+    "70": "#EF97A7",
+    "20": "#FAD5E5"
+  },
+  "be-well": {
+    "DEFAULT": "#8A52A0",
+    "70": "#B293C0",
+    "20": "#DFD3E8"
+  },
+  "have-adventures": {
+    "DEFAULT": "#71BF44",
+    "70": "#9CCE77",
+    "20": "#DFEED4"
+  },
+  "take-action": {
+    "DEFAULT": "#F68E1D",
+    "70": "#FAB682",
+    "20": "#FEE5C9"
+  },
+  "skills-for-my-future": {
+    "DEFAULT": "#F6ADCD",
+    "70": "#F9C9DC",
+    "20": "#FAD5E5"
+  },
+  "bronze": "#D86A53",
+  "silver": "#C6CED4",
+  "gold": "#A57E26"
+}
