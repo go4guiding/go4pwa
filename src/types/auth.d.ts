@@ -1,7 +1,9 @@
 /// <reference types="typescript" />
 
+import { SerializedError } from '@reduxjs/toolkit';
+import { Role } from 'common';
+
 // AUTHENTICATION
-export declare type Role = 'member' | 'leader' | 'admin' | null;
 export declare type FirebaseUser<T> = T & {
   createdAt: string;
   lastLoginAt: string;
@@ -19,7 +21,7 @@ export declare type SignUpTokenResult = {
   unitId: string;
   patrolId?: string;
   role: string;
-} | null;
+};
 
 export declare type SignInParams = {
   username: string;
@@ -43,12 +45,13 @@ export declare type UserState = {
   role: Role;
   createdAt: string;
   lastSignedInAt: string;
-} | null;
+};
 
 export declare type AuthState = {
+  token: string | null;
+  user: UserState | null;
   isValid: boolean;
   isLoading: boolean;
-  user: UserState;
-  error: Error | null;
+  error: SerializedError | null;
 };
 // END AUTHENTICATION

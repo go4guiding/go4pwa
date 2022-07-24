@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Role, UserState } from 'types/auth';
+import { Role } from 'common';
+import { UserState } from 'types/auth';
 
 type PrivateRouteProps = {
   user: UserState;
