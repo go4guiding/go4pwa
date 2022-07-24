@@ -8,15 +8,19 @@
     },
     "awardTargets": {
       ".read": true,
-      ".write": "auth != null && auth.token.role == 'admin'"
+      ".write": false
+    },
+    "awardThemes": {
+      ".read": true,
+      ".write": false
     },
     "signUpTokens": {
       ".read": true,
-      ".write": "auth != null"
+      ".write": false
     },
     "units": {
       ".read": true,
-      ".write": "auth != null && auth.token.role == 'admin'"
+      ".write": false
     }
   }
 }
